@@ -1,0 +1,41 @@
+====================================================================================
+source: outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv | rows: 250
+cols: ['enroll_session', 'test_session', 'enroll_emotion', 'test_emotion', 'transition', 'theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift', 'total_psd_drift', 'variant', 'seed', 'EER', 'AUC']
+band drift columns present: ['theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift']
+
+====================================================================================
+[C9] delta band + broadband/total-drift control
+  base (4-band) seed-collapsed n=50  R2=0.199
+    theta_power_drift  beta=+0.430  p=0.00402
+    alpha_power_drift  beta=-0.257  p=0.0742
+    beta_power_drift   beta=-0.178  p=0.493
+    gamma_power_drift  beta=+0.079  p=0.761
+  delta_power_drift NOT in CSV -> recompute 5-band drift in step 11 (11_band_recompute_from_windows.py).
+  broadband control: theta beta=+0.564 p=0.00514 | total_psd beta=-0.280 p=0.152
+  READ-OFF: if theta stays significant with total_psd_drift in-model, it is not just broadband distance.
+
+====================================================================================
+[C10] normalised identity-drift index
+  index=unnormalised     Spearman rho=+0.057 p=0.695
+  index=sigma-normalised Spearman rho=+0.091 p=0.528
+  READ-OFF: if both indices give the same positive monotone EER relation, the metric choice is not driving the result.
+
+====================================================================================
+[C19] monotonicity of drift->EER
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/isotonic.py:90: UserWarning: Confidence interval of the Spearman correlation coefficient spans zero. Determination of ``increasing`` may be suspect.
+  warnings.warn(
+  Spearman rho=+0.057 p=0.695 | Kendall tau=+0.026 p=0.789
+  linear R2=0.016 | isotonic R2=0.127  (close => monotone well described by a rising line)
+  READ-OFF: positive significant Spearman+Kendall and isotonic~linear R2 justify 'monotonic'.
+
+====================================================================================
+[C18] cross-validated EER prediction from spectral drift
+  leave-one-emotion-pair-out   n=50  MAE=0.0070  RMSE=0.0077  predictive R2=-0.028
+  leave-one-transition-out     n=50  MAE=0.0094  RMSE=0.0118  predictive R2=-1.444
+  READ-OFF: predictive R2>0 (out-of-sample) supports 'predictable'; if <=0, reword to 'systematically associated'.
+
+====================================================================================
+[C8] theta->EER per matcher (CSV variants)
+  CSV has a single variant -> run step 13 (13_matcher_theta_consistency.py) to get PSD/EEGNet/ArcFace EERs.
+
+DONE -> outputs/work3/10_csv_checks

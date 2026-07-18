@@ -1,0 +1,14 @@
+======================================================================================================================
+CHANGE-POINT DIAGNOSTIC  (manuscript target: breakpoint~0.124, improve~8%, published p=0.001)
+======================================================================================================================
+                                                                        file            drift                 mode   n  mean_x     bp  improve      p  ci_lo  ci_hi
+     outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv       mean_drift                  raw 375  0.1794 0.1242   5.6081 0.0002 0.1156 0.1908
+         outputs/run_02_q1_validation/tables/main_multiseed_results_live.csv transition_drift                  raw  15  0.1760 0.1238  27.2017 0.7207 0.1101 0.2344
+              outputs/run_02_q1_validation/tables/main_multiseed_results.csv transition_drift                  raw  15  0.1760 0.1238  27.2017 0.7247 0.1108 0.2346
+outputs/run_02_q1_validation/tables/final_worst_cross_emotion_conditions.csv       mean_drift                  raw  15  0.1241 0.1218   7.0221 0.8788 0.1213 0.1292
+            outputs/run_01_baseline/tables/drift_vs_eer_validation_table.csv      drift_index                  raw  25  0.1174 0.1101  59.9814 0.0004 0.1087 0.1110
+     outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv       mean_drift seed-collapsed(n=25)  25  0.1794 0.1723  13.1619 0.2272 0.1675 0.1854
+
+SAVED -> outputs/run_18_changepoint_ci/changepoint_diagnostic.csv
+Read: find the row whose bp~0.124 AND improve~8%. Compare its raw p vs its seed-collapsed p.
+======================================================================================================================

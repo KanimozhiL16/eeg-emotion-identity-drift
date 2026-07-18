@@ -1,0 +1,34 @@
+====================================================================================
+source: outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv | seed-collapsed conditions n=25
+paper identity-drift index column: total_psd_drift
+
+====================================================================================
+[C10 & C19] monotonicity on candidate indices
+/lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/work3/17_index_monotonic_cv.py:49: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  cands.append(("summed_4band", g[bands].abs().sum(1).to_numpy(float)))
+/lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/work3/17_index_monotonic_cv.py:51: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  cands.append(("sigma_norm_4band",(g[bands].abs()/sig).sum(1).to_numpy(float)))
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/isotonic.py:90: UserWarning: Confidence interval of the Spearman correlation coefficient spans zero. Determination of ``increasing`` may be suspect.
+  warnings.warn(
+  total_psd_drift    Spearman rho=+0.185 p=0.375 ns | Kendall tau=+0.127 p=0.391 | linR2=0.031 isoR2=0.273
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/isotonic.py:90: UserWarning: Confidence interval of the Spearman correlation coefficient spans zero. Determination of ``increasing`` may be suspect.
+  warnings.warn(
+  summed_4band       Spearman rho=+0.185 p=0.375 ns | Kendall tau=+0.127 p=0.391 | linR2=0.031 isoR2=0.273
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/isotonic.py:90: UserWarning: Confidence interval of the Spearman correlation coefficient spans zero. Determination of ``increasing`` may be suspect.
+  warnings.warn(
+  sigma_norm_4band   Spearman rho=+0.175 p=0.402 ns | Kendall tau=+0.127 p=0.391 | linR2=0.034 isoR2=0.180
+  theta_only         Spearman rho=+0.617 p=0.00102 ** | Kendall tau=+0.440 p=0.00169 | linR2=0.234 isoR2=0.394
+  READ-OFF: use the PAPER index (total_psd_drift) row to judge 'monotonic'. If its Spearman is +ve & p<0.05,
+  the monotonic claim holds on the paper's own index; if n.s., soften to a theta-SPECIFIC (not aggregate) effect.
+
+====================================================================================
+[C18] cross-validated EER prediction (out-of-sample) by feature set
+  feats=total_psd_drift  leave-one-emotion-pair-out MAE=0.0076 RMSE=0.0081 predR2=-0.133
+  feats=total_psd_drift  leave-one-transition-out   MAE=0.0076 RMSE=0.0081 predR2=-0.133
+  feats=theta_only       leave-one-emotion-pair-out MAE=0.0062 RMSE=0.0071 predR2=+0.125
+  feats=theta_only       leave-one-transition-out   MAE=0.0062 RMSE=0.0071 predR2=+0.125
+  feats=4band            leave-one-emotion-pair-out MAE=0.0065 RMSE=0.0074 predR2=+0.031
+  feats=4band            leave-one-transition-out   MAE=0.0065 RMSE=0.0074 predR2=+0.031
+  READ-OFF: 'predictable' needs predR2>0 out-of-sample for at least one sensible feature set; else 'systematically associated'.
+
+DONE -> outputs/work3/17_index_monotonic_cv

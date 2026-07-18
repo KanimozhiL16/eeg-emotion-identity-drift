@@ -1,0 +1,1 @@
+Existing EEG biometric studies primarily report aggregate verification performance, whereas this work explicitly models, quantifies, and statistically validates cognitive-state-induced identity drift.

@@ -1,0 +1,10 @@
+hypothesis,test,statistic,p_value,detail
+H2,Friedman (session EER),11.375,0.003388052521834713,"KendallW=0.355, n=16"
+H3,Pearson theta_power_drift vs EER,0.317032263364952,3.0506316447890824e-07,FDR-q=1.53e-06*
+H3,Pearson alpha_power_drift vs EER,-0.1472683111651,0.01982926165817282,FDR-q=0.0496*
+H3,Pearson total_psd_drift vs EER,0.11172230505774153,0.07787421287864647,FDR-q=0.13
+H3,Pearson gamma_power_drift vs EER,0.07699832280806107,0.22507212867217477,FDR-q=0.281
+H3,Pearson beta_power_drift vs EER,0.03789637817713397,0.5509041993144802,FDR-q=0.551
+H3,standardized regression R^2,0.1519871761491548,,"betas={'theta_power_drift': 0.0032, 'alpha_power_drift': -0.002, 'beta_power_drift': -0.0014, 'gamma_power_drift': 0.0005, 'total_psd_drift': 0.0002}"
+H4,two-phase vs single-line (F),11.574757481191103,1.5696585449198608e-05,"changepoint drift~=0.001346, SSE 0.0168->0.0154"
+H1,emotion EER mean/CI,0.31708130273491186,,"range [0.3113,0.3268], 95%CI[0.3087,0.3255]"

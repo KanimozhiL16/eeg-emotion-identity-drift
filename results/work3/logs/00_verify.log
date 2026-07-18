@@ -1,0 +1,71 @@
+====================================================================================
+WORK3 SETUP VERIFICATION
+ROOT = /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+====================================================================================
+
+[1] python packages
+  [OK]  numpy import
+  [OK]  scipy import
+  [OK]  pandas import
+  [OK]  sklearn import
+  [OK]  statsmodels import
+  [OK]  torch import
+  [OK]  transformers import
+
+[2] SEED-V sessionwise windows  (data/processed/sessionwise/*.npz)
+  [OK]  found 6 npz files
+    SEEDV_Q1_SAFE_SESSION1_16sub.npz: X=(37600, 62, 400) keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+    SEEDV_Q1_SAFE_SESSION2_16sub.npz: X=(33856, 62, 400) keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+    SEEDV_Q1_SAFE_SESSION3_16sub.npz: X=(42688, 62, 400) keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+    session1.npz: X=(37600, 62, 400) keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+    session2.npz: X=(33856, 62, 400) keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+    session3.npz: X=(42688, 62, 400) keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+  [OK]  emotion label key present (y_emotion)
+  [OK]  y_session present
+  [OK]  sessions present = [1, 2, 3] (need 1,2,3)
+  [OK]  channels = 62
+
+[3] merged mechanism CSV (Table-3 data)
+  [OK]  merged_global_psd_identity_eer.csv found
+    path: outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv | rows: 250
+    columns: ['enroll_session', 'test_session', 'enroll_emotion', 'test_emotion', 'transition', 'theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift', 'total_psd_drift', 'variant', 'seed', 'EER', 'AUC']
+  [OK]  theta_power_drift column present
+  [OK]  EER column present
+  [~~]  delta_power_drift NOT in CSV -> C9 delta comes from step 11 (window recompute)
+  [~~]  total_psd_drift present -> broadband control usable
+    variants: ['arcface_supcon_cnn']
+    enroll_emotion unique: ['Disgust', 'Fear', 'Happy', 'Neutral', 'Sad']
+    test_emotion unique: ['Disgust', 'Fear', 'Happy', 'Neutral', 'Sad']
+    enroll_session unique: ['SEEDV_Q1_SAFE_SESSION1_16sub.npz']
+    test_session unique: ['SEEDV_Q1_SAFE_SESSION2_16sub.npz', 'SEEDV_Q1_SAFE_SESSION3_16sub.npz']
+  [OK]  test_session -> session number mapping = ['2', '3'] (expect 2,3)
+
+[4] run_07 helper functions
+  [OK]  scripts/07_seedv_session_drift_subject_adaptation.py exists
+  [OK]  run_07.simple_features available
+  [OK]  run_07.make_prototypes available
+  [OK]  run_07.verification_scores available
+  [OK]  run_07.eer_auc available
+  [OK]  run_07.downsample_per_subject available
+    eer_auc returns 3 values -> scripts use [0]/[1], OK
+
+[5] AEP auditory dataset
+  [OK]  AEP npz exists
+    X: (22201, 4, 512)  ch_names: ['T7', 'F8', 'Cz', 'P4']  fs: 256
+  [OK]  T7 channel present (index 0)
+  [OK]  source_file provenance present (for session parsing)
+
+====================================================================================
+SUMMARY: 25 OK | 0 FAIL | 2 notes
+====================================================================================
+
+Scripts and their needs:
+  10_csv_mechanism_checks.py             needs: merged CSV
+  11_band_recompute_from_windows.py      needs: sessionwise npz + merged CSV
+  12_subject_theta_vs_eer.py             needs: sessionwise npz + run_07
+  13_matcher_theta_consistency.py        needs: sessionwise npz + merged CSV
+  14_theta_aware_mitigation.py           needs: sessionwise npz
+  15_reve_linear_probe.py                needs: sessionwise npz + torch/transformers
+  16_aep_spectral_theta.py               needs: AEP npz
+
+If 0 blockers -> run  bash scripts/work3/run_all.sh  (or run each step 10..16 individually).

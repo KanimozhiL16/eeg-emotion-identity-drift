@@ -1,0 +1,4 @@
+priority,experiment,reason,expected_output
+1,AEP cross-dataset validation,Tests whether cognitive/sensory-state EEG identity drift generalizes beyond SEED-V.,"External validation EER/AUC, drift-vs-EER, PSD drift, ROC/DET."
+2,Statistical significance testing,"Strengthens Q1 journal validity using paired tests, confidence intervals, and FDR correction.","p-values, effect sizes, corrected significance table."
+3,Online subject adaptation,Extends Run07 from offline adaptation to streaming biometric updating.,"time-to-stabilization, EER before/after adaptation, adaptation curves."

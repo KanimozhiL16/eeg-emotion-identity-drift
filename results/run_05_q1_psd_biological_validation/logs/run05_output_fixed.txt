@@ -1,0 +1,30 @@
+================================================================================
+RUN05: PSD BAND ANALYSIS + BIOLOGICAL DRIFT VALIDATION
+================================================================================
+Detected real session files:
+ - SEEDV_Q1_SAFE_SESSION1_16sub.npz
+ - SEEDV_Q1_SAFE_SESSION2_16sub.npz
+ - SEEDV_Q1_SAFE_SESSION3_16sub.npz
+
+Processing SEEDV_Q1_SAFE_SESSION1_16sub.npz: X=(37600, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+
+Processing SEEDV_Q1_SAFE_SESSION2_16sub.npz: X=(33856, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+
+Processing SEEDV_Q1_SAFE_SESSION3_16sub.npz: X=(42688, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+Using identity drift table: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv
+
+✅ RUN05 COMPLETE
+Figures saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_05_q1_psd_biological_validation/figures
+Tables saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_05_q1_psd_biological_validation/tables
+Report saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_05_q1_psd_biological_validation/q1_biological_drift_validation_report.md
+
+Generated figures:
+ - fig01_psd_bandpower_by_emotion.png
+ - fig02_alpha_band_drift_heatmap.png
+ - fig02_beta_band_drift_heatmap.png
+ - fig02_gamma_band_drift_heatmap.png
+ - fig02_theta_band_drift_heatmap.png
+ - fig03_total_psd_drift_heatmap.png
+ - fig04_psd_drift_band_boxplot.png
+ - fig06_psd_drift_vs_eer.png
+ - fig07_band_specific_correlation_with_eer.png

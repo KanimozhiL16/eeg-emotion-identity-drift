@@ -1,0 +1,348 @@
+Loading sessionwise NPZ files...
+Train: (71456, 62, 400) Test: (42688, 62, 400)
+Device: cuda
+Computing PSD baseline features...
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+softmax_cnn seed=0 epoch=1/20 test_acc=0.7502
+softmax_cnn seed=0 epoch=2/20 test_acc=0.7812
+softmax_cnn seed=0 epoch=3/20 test_acc=0.8019
+softmax_cnn seed=0 epoch=4/20 test_acc=0.8391
+softmax_cnn seed=0 epoch=5/20 test_acc=0.8425
+softmax_cnn seed=0 epoch=6/20 test_acc=0.8418
+softmax_cnn seed=0 epoch=7/20 test_acc=0.8508
+softmax_cnn seed=0 epoch=8/20 test_acc=0.8526
+softmax_cnn seed=0 epoch=9/20 test_acc=0.8534
+softmax_cnn seed=0 epoch=10/20 test_acc=0.8525
+softmax_cnn seed=0 epoch=11/20 test_acc=0.8531
+softmax_cnn seed=0 epoch=12/20 test_acc=0.8011
+softmax_cnn seed=0 epoch=13/20 test_acc=0.8337
+softmax_cnn seed=0 epoch=14/20 test_acc=0.8531
+softmax_cnn seed=0 epoch=15/20 test_acc=0.8583
+softmax_cnn seed=0 epoch=16/20 test_acc=0.8633
+softmax_cnn seed=0 epoch=17/20 test_acc=0.8614
+softmax_cnn seed=0 epoch=18/20 test_acc=0.8617
+softmax_cnn seed=0 epoch=19/20 test_acc=0.8643
+softmax_cnn seed=0 epoch=20/20 test_acc=0.8661
+arcface_cnn seed=0 epoch=1/20 test_acc=0.7869
+arcface_cnn seed=0 epoch=2/20 test_acc=0.8235
+arcface_cnn seed=0 epoch=3/20 test_acc=0.8191
+arcface_cnn seed=0 epoch=4/20 test_acc=0.8510
+arcface_cnn seed=0 epoch=5/20 test_acc=0.8488
+arcface_cnn seed=0 epoch=6/20 test_acc=0.8569
+arcface_cnn seed=0 epoch=7/20 test_acc=0.8626
+arcface_cnn seed=0 epoch=8/20 test_acc=0.8654
+arcface_cnn seed=0 epoch=9/20 test_acc=0.8680
+arcface_cnn seed=0 epoch=10/20 test_acc=0.8668
+arcface_cnn seed=0 epoch=11/20 test_acc=0.8344
+arcface_cnn seed=0 epoch=12/20 test_acc=0.8564
+arcface_cnn seed=0 epoch=13/20 test_acc=0.8704
+arcface_cnn seed=0 epoch=14/20 test_acc=0.8724
+arcface_cnn seed=0 epoch=15/20 test_acc=0.8720
+arcface_cnn seed=0 epoch=16/20 test_acc=0.8772
+arcface_cnn seed=0 epoch=17/20 test_acc=0.8765
+arcface_cnn seed=0 epoch=18/20 test_acc=0.8750
+arcface_cnn seed=0 epoch=19/20 test_acc=0.8783
+arcface_cnn seed=0 epoch=20/20 test_acc=0.8802
+arcface_supcon_cnn seed=0 epoch=1/20 test_acc=0.8159
+arcface_supcon_cnn seed=0 epoch=2/20 test_acc=0.8424
+arcface_supcon_cnn seed=0 epoch=3/20 test_acc=0.8419
+arcface_supcon_cnn seed=0 epoch=4/20 test_acc=0.8635
+arcface_supcon_cnn seed=0 epoch=5/20 test_acc=0.8537
+arcface_supcon_cnn seed=0 epoch=6/20 test_acc=0.8728
+arcface_supcon_cnn seed=0 epoch=7/20 test_acc=0.8858
+arcface_supcon_cnn seed=0 epoch=8/20 test_acc=0.8583
+arcface_supcon_cnn seed=0 epoch=9/20 test_acc=0.8588
+arcface_supcon_cnn seed=0 epoch=10/20 test_acc=0.8900
+arcface_supcon_cnn seed=0 epoch=11/20 test_acc=0.7741
+arcface_supcon_cnn seed=0 epoch=12/20 test_acc=0.8854
+arcface_supcon_cnn seed=0 epoch=13/20 test_acc=0.8871
+arcface_supcon_cnn seed=0 epoch=14/20 test_acc=0.8864
+arcface_supcon_cnn seed=0 epoch=15/20 test_acc=0.8934
+arcface_supcon_cnn seed=0 epoch=16/20 test_acc=0.8095
+arcface_supcon_cnn seed=0 epoch=17/20 test_acc=0.8825
+arcface_supcon_cnn seed=0 epoch=18/20 test_acc=0.8878
+arcface_supcon_cnn seed=0 epoch=19/20 test_acc=0.8952
+arcface_supcon_cnn seed=0 epoch=20/20 test_acc=0.8841
+Computing PSD baseline features...
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+softmax_cnn seed=1 epoch=1/20 test_acc=0.7857
+softmax_cnn seed=1 epoch=2/20 test_acc=0.8201
+softmax_cnn seed=1 epoch=3/20 test_acc=0.8092
+softmax_cnn seed=1 epoch=4/20 test_acc=0.7955
+softmax_cnn seed=1 epoch=5/20 test_acc=0.8515
+softmax_cnn seed=1 epoch=6/20 test_acc=0.8600
+softmax_cnn seed=1 epoch=7/20 test_acc=0.8600
+softmax_cnn seed=1 epoch=8/20 test_acc=0.8642
+softmax_cnn seed=1 epoch=9/20 test_acc=0.8632
+softmax_cnn seed=1 epoch=10/20 test_acc=0.8651
+softmax_cnn seed=1 epoch=11/20 test_acc=0.8648
+softmax_cnn seed=1 epoch=12/20 test_acc=0.8351
+softmax_cnn seed=1 epoch=13/20 test_acc=0.8264
+softmax_cnn seed=1 epoch=14/20 test_acc=0.8379
+softmax_cnn seed=1 epoch=15/20 test_acc=0.8560
+softmax_cnn seed=1 epoch=16/20 test_acc=0.8601
+softmax_cnn seed=1 epoch=17/20 test_acc=0.8610
+softmax_cnn seed=1 epoch=18/20 test_acc=0.8610
+softmax_cnn seed=1 epoch=19/20 test_acc=0.8657
+softmax_cnn seed=1 epoch=20/20 test_acc=0.8674
+arcface_cnn seed=1 epoch=1/20 test_acc=0.7832
+arcface_cnn seed=1 epoch=2/20 test_acc=0.8063
+arcface_cnn seed=1 epoch=3/20 test_acc=0.8245
+arcface_cnn seed=1 epoch=4/20 test_acc=0.8338
+arcface_cnn seed=1 epoch=5/20 test_acc=0.8558
+arcface_cnn seed=1 epoch=6/20 test_acc=0.8668
+arcface_cnn seed=1 epoch=7/20 test_acc=0.8659
+arcface_cnn seed=1 epoch=8/20 test_acc=0.8724
+arcface_cnn seed=1 epoch=9/20 test_acc=0.7954
+arcface_cnn seed=1 epoch=10/20 test_acc=0.8326
+arcface_cnn seed=1 epoch=11/20 test_acc=0.8066
+arcface_cnn seed=1 epoch=12/20 test_acc=0.8707
+arcface_cnn seed=1 epoch=13/20 test_acc=0.8756
+arcface_cnn seed=1 epoch=14/20 test_acc=0.8771
+arcface_cnn seed=1 epoch=15/20 test_acc=0.8791
+arcface_cnn seed=1 epoch=16/20 test_acc=0.8808
+arcface_cnn seed=1 epoch=17/20 test_acc=0.8779
+arcface_cnn seed=1 epoch=18/20 test_acc=0.8796
+arcface_cnn seed=1 epoch=19/20 test_acc=0.8816
+arcface_cnn seed=1 epoch=20/20 test_acc=0.8817
+arcface_supcon_cnn seed=1 epoch=1/20 test_acc=0.8372
+arcface_supcon_cnn seed=1 epoch=2/20 test_acc=0.8636
+arcface_supcon_cnn seed=1 epoch=3/20 test_acc=0.8740
+arcface_supcon_cnn seed=1 epoch=4/20 test_acc=0.8744
+arcface_supcon_cnn seed=1 epoch=5/20 test_acc=0.8802
+arcface_supcon_cnn seed=1 epoch=6/20 test_acc=0.8753
+arcface_supcon_cnn seed=1 epoch=7/20 test_acc=0.8733
+arcface_supcon_cnn seed=1 epoch=8/20 test_acc=0.8706
+arcface_supcon_cnn seed=1 epoch=9/20 test_acc=0.8747
+arcface_supcon_cnn seed=1 epoch=10/20 test_acc=0.8789
+arcface_supcon_cnn seed=1 epoch=11/20 test_acc=0.8802
+arcface_supcon_cnn seed=1 epoch=12/20 test_acc=0.7257
+arcface_supcon_cnn seed=1 epoch=13/20 test_acc=0.8859
+arcface_supcon_cnn seed=1 epoch=14/20 test_acc=0.8867
+arcface_supcon_cnn seed=1 epoch=15/20 test_acc=0.8851
+arcface_supcon_cnn seed=1 epoch=16/20 test_acc=0.8514
+arcface_supcon_cnn seed=1 epoch=17/20 test_acc=0.8831
+arcface_supcon_cnn seed=1 epoch=18/20 test_acc=0.8824
+arcface_supcon_cnn seed=1 epoch=19/20 test_acc=0.8799
+arcface_supcon_cnn seed=1 epoch=20/20 test_acc=0.7969
+Computing PSD baseline features...
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+softmax_cnn seed=2 epoch=1/20 test_acc=0.8057
+softmax_cnn seed=2 epoch=2/20 test_acc=0.7960
+softmax_cnn seed=2 epoch=3/20 test_acc=0.8008
+softmax_cnn seed=2 epoch=4/20 test_acc=0.7974
+softmax_cnn seed=2 epoch=5/20 test_acc=0.8483
+softmax_cnn seed=2 epoch=6/20 test_acc=0.8487
+softmax_cnn seed=2 epoch=7/20 test_acc=0.8460
+softmax_cnn seed=2 epoch=8/20 test_acc=0.8237
+softmax_cnn seed=2 epoch=9/20 test_acc=0.8488
+softmax_cnn seed=2 epoch=10/20 test_acc=0.8590
+softmax_cnn seed=2 epoch=11/20 test_acc=0.8591
+softmax_cnn seed=2 epoch=12/20 test_acc=0.8626
+softmax_cnn seed=2 epoch=13/20 test_acc=0.8651
+softmax_cnn seed=2 epoch=14/20 test_acc=0.8656
+softmax_cnn seed=2 epoch=15/20 test_acc=0.8657
+softmax_cnn seed=2 epoch=16/20 test_acc=0.8679
+softmax_cnn seed=2 epoch=17/20 test_acc=0.8682
+softmax_cnn seed=2 epoch=18/20 test_acc=0.8698
+softmax_cnn seed=2 epoch=19/20 test_acc=0.8704
+softmax_cnn seed=2 epoch=20/20 test_acc=0.8720
+arcface_cnn seed=2 epoch=1/20 test_acc=0.8040
+arcface_cnn seed=2 epoch=2/20 test_acc=0.8200
+arcface_cnn seed=2 epoch=3/20 test_acc=0.8171
+arcface_cnn seed=2 epoch=4/20 test_acc=0.8353
+arcface_cnn seed=2 epoch=5/20 test_acc=0.8608
+arcface_cnn seed=2 epoch=6/20 test_acc=0.8629
+arcface_cnn seed=2 epoch=7/20 test_acc=0.8623
+arcface_cnn seed=2 epoch=8/20 test_acc=0.8712
+arcface_cnn seed=2 epoch=9/20 test_acc=0.8710
+arcface_cnn seed=2 epoch=10/20 test_acc=0.8708
+arcface_cnn seed=2 epoch=11/20 test_acc=0.8725
+arcface_cnn seed=2 epoch=12/20 test_acc=0.8758
+arcface_cnn seed=2 epoch=13/20 test_acc=0.8766
+arcface_cnn seed=2 epoch=14/20 test_acc=0.8777
+arcface_cnn seed=2 epoch=15/20 test_acc=0.8299
+arcface_cnn seed=2 epoch=16/20 test_acc=0.8661
+arcface_cnn seed=2 epoch=17/20 test_acc=0.8720
+arcface_cnn seed=2 epoch=18/20 test_acc=0.8772
+arcface_cnn seed=2 epoch=19/20 test_acc=0.8768
+arcface_cnn seed=2 epoch=20/20 test_acc=0.8785
+arcface_supcon_cnn seed=2 epoch=1/20 test_acc=0.8342
+arcface_supcon_cnn seed=2 epoch=2/20 test_acc=0.8493
+arcface_supcon_cnn seed=2 epoch=3/20 test_acc=0.8692
+arcface_supcon_cnn seed=2 epoch=4/20 test_acc=0.8460
+arcface_supcon_cnn seed=2 epoch=5/20 test_acc=0.8654
+arcface_supcon_cnn seed=2 epoch=6/20 test_acc=0.8768
+arcface_supcon_cnn seed=2 epoch=7/20 test_acc=0.8575
+arcface_supcon_cnn seed=2 epoch=8/20 test_acc=0.8810
+arcface_supcon_cnn seed=2 epoch=9/20 test_acc=0.8664
+arcface_supcon_cnn seed=2 epoch=10/20 test_acc=0.8704
+arcface_supcon_cnn seed=2 epoch=11/20 test_acc=0.8770
+arcface_supcon_cnn seed=2 epoch=12/20 test_acc=0.8727
+arcface_supcon_cnn seed=2 epoch=13/20 test_acc=0.8872
+arcface_supcon_cnn seed=2 epoch=14/20 test_acc=0.8718
+arcface_supcon_cnn seed=2 epoch=15/20 test_acc=0.8880
+arcface_supcon_cnn seed=2 epoch=16/20 test_acc=0.8868
+arcface_supcon_cnn seed=2 epoch=17/20 test_acc=0.8792
+arcface_supcon_cnn seed=2 epoch=18/20 test_acc=0.8999
+arcface_supcon_cnn seed=2 epoch=19/20 test_acc=0.8645
+arcface_supcon_cnn seed=2 epoch=20/20 test_acc=0.8783
+Computing PSD baseline features...
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+softmax_cnn seed=3 epoch=1/20 test_acc=0.8016
+softmax_cnn seed=3 epoch=2/20 test_acc=0.8057
+softmax_cnn seed=3 epoch=3/20 test_acc=0.8010
+softmax_cnn seed=3 epoch=4/20 test_acc=0.8417
+softmax_cnn seed=3 epoch=5/20 test_acc=0.8452
+softmax_cnn seed=3 epoch=6/20 test_acc=0.8503
+softmax_cnn seed=3 epoch=7/20 test_acc=0.8525
+softmax_cnn seed=3 epoch=8/20 test_acc=0.8563
+softmax_cnn seed=3 epoch=9/20 test_acc=0.8576
+softmax_cnn seed=3 epoch=10/20 test_acc=0.8571
+softmax_cnn seed=3 epoch=11/20 test_acc=0.8626
+softmax_cnn seed=3 epoch=12/20 test_acc=0.8623
+softmax_cnn seed=3 epoch=13/20 test_acc=0.8616
+softmax_cnn seed=3 epoch=14/20 test_acc=0.8676
+softmax_cnn seed=3 epoch=15/20 test_acc=0.8586
+softmax_cnn seed=3 epoch=16/20 test_acc=0.8707
+softmax_cnn seed=3 epoch=17/20 test_acc=0.8174
+softmax_cnn seed=3 epoch=18/20 test_acc=0.8291
+softmax_cnn seed=3 epoch=19/20 test_acc=0.8501
+softmax_cnn seed=3 epoch=20/20 test_acc=0.8567
+arcface_cnn seed=3 epoch=1/20 test_acc=0.8155
+arcface_cnn seed=3 epoch=2/20 test_acc=0.8265
+arcface_cnn seed=3 epoch=3/20 test_acc=0.8040
+arcface_cnn seed=3 epoch=4/20 test_acc=0.8551
+arcface_cnn seed=3 epoch=5/20 test_acc=0.8454
+arcface_cnn seed=3 epoch=6/20 test_acc=0.8656
+arcface_cnn seed=3 epoch=7/20 test_acc=0.8669
+arcface_cnn seed=3 epoch=8/20 test_acc=0.8568
+arcface_cnn seed=3 epoch=9/20 test_acc=0.8263
+arcface_cnn seed=3 epoch=10/20 test_acc=0.8471
+arcface_cnn seed=3 epoch=11/20 test_acc=0.8760
+arcface_cnn seed=3 epoch=12/20 test_acc=0.8734
+arcface_cnn seed=3 epoch=13/20 test_acc=0.8760
+arcface_cnn seed=3 epoch=14/20 test_acc=0.8794
+arcface_cnn seed=3 epoch=15/20 test_acc=0.8749
+arcface_cnn seed=3 epoch=16/20 test_acc=0.8794
+arcface_cnn seed=3 epoch=17/20 test_acc=0.8792
+arcface_cnn seed=3 epoch=18/20 test_acc=0.8611
+arcface_cnn seed=3 epoch=19/20 test_acc=0.8616
+arcface_cnn seed=3 epoch=20/20 test_acc=0.8755
+arcface_supcon_cnn seed=3 epoch=1/20 test_acc=0.8364
+arcface_supcon_cnn seed=3 epoch=2/20 test_acc=0.8472
+arcface_supcon_cnn seed=3 epoch=3/20 test_acc=0.8435
+arcface_supcon_cnn seed=3 epoch=4/20 test_acc=0.8766
+arcface_supcon_cnn seed=3 epoch=5/20 test_acc=0.8857
+arcface_supcon_cnn seed=3 epoch=6/20 test_acc=0.7946
+arcface_supcon_cnn seed=3 epoch=7/20 test_acc=0.8877
+arcface_supcon_cnn seed=3 epoch=8/20 test_acc=0.8855
+arcface_supcon_cnn seed=3 epoch=9/20 test_acc=0.8817
+arcface_supcon_cnn seed=3 epoch=10/20 test_acc=0.8455
+arcface_supcon_cnn seed=3 epoch=11/20 test_acc=0.8765
+arcface_supcon_cnn seed=3 epoch=12/20 test_acc=0.8749
+arcface_supcon_cnn seed=3 epoch=13/20 test_acc=0.8795
+arcface_supcon_cnn seed=3 epoch=14/20 test_acc=0.8783
+arcface_supcon_cnn seed=3 epoch=15/20 test_acc=0.8774
+arcface_supcon_cnn seed=3 epoch=16/20 test_acc=0.8198
+arcface_supcon_cnn seed=3 epoch=17/20 test_acc=0.8760
+arcface_supcon_cnn seed=3 epoch=18/20 test_acc=0.8786
+arcface_supcon_cnn seed=3 epoch=19/20 test_acc=0.8681
+arcface_supcon_cnn seed=3 epoch=20/20 test_acc=0.8739
+Computing PSD baseline features...
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/sklearn/linear_model/_base.py:408: RuntimeWarning: invalid value encountered in divide
+  prob /= prob.sum(axis=1).reshape((prob.shape[0], -1))
+softmax_cnn seed=4 epoch=1/20 test_acc=0.7941
+softmax_cnn seed=4 epoch=2/20 test_acc=0.7988
+softmax_cnn seed=4 epoch=3/20 test_acc=0.8145
+softmax_cnn seed=4 epoch=4/20 test_acc=0.8227
+softmax_cnn seed=4 epoch=5/20 test_acc=0.8096
+softmax_cnn seed=4 epoch=6/20 test_acc=0.8467
+softmax_cnn seed=4 epoch=7/20 test_acc=0.8510
+softmax_cnn seed=4 epoch=8/20 test_acc=0.7582
+softmax_cnn seed=4 epoch=9/20 test_acc=0.8118
+softmax_cnn seed=4 epoch=10/20 test_acc=0.8378
+softmax_cnn seed=4 epoch=11/20 test_acc=0.8510
+softmax_cnn seed=4 epoch=12/20 test_acc=0.8603
+softmax_cnn seed=4 epoch=13/20 test_acc=0.8611
+softmax_cnn seed=4 epoch=14/20 test_acc=0.8638
+softmax_cnn seed=4 epoch=15/20 test_acc=0.8667
+softmax_cnn seed=4 epoch=16/20 test_acc=0.8679
+softmax_cnn seed=4 epoch=17/20 test_acc=0.8701
+softmax_cnn seed=4 epoch=18/20 test_acc=0.8689
+softmax_cnn seed=4 epoch=19/20 test_acc=0.8709
+softmax_cnn seed=4 epoch=20/20 test_acc=0.8721
+arcface_cnn seed=4 epoch=1/20 test_acc=0.8022
+arcface_cnn seed=4 epoch=2/20 test_acc=0.8185
+arcface_cnn seed=4 epoch=3/20 test_acc=0.8159
+arcface_cnn seed=4 epoch=4/20 test_acc=0.8541
+arcface_cnn seed=4 epoch=5/20 test_acc=0.8421
+arcface_cnn seed=4 epoch=6/20 test_acc=0.8661
+arcface_cnn seed=4 epoch=7/20 test_acc=0.8695
+arcface_cnn seed=4 epoch=8/20 test_acc=0.8742
+arcface_cnn seed=4 epoch=9/20 test_acc=0.8724
+arcface_cnn seed=4 epoch=10/20 test_acc=0.8747
+arcface_cnn seed=4 epoch=11/20 test_acc=0.8481
+arcface_cnn seed=4 epoch=12/20 test_acc=0.8545
+arcface_cnn seed=4 epoch=13/20 test_acc=0.8398
+arcface_cnn seed=4 epoch=14/20 test_acc=0.8670
+arcface_cnn seed=4 epoch=15/20 test_acc=0.8784
+arcface_cnn seed=4 epoch=16/20 test_acc=0.8803
+arcface_cnn seed=4 epoch=17/20 test_acc=0.8796
+arcface_cnn seed=4 epoch=18/20 test_acc=0.8791
+arcface_cnn seed=4 epoch=19/20 test_acc=0.8799
+arcface_cnn seed=4 epoch=20/20 test_acc=0.8819
+arcface_supcon_cnn seed=4 epoch=1/20 test_acc=0.8194
+arcface_supcon_cnn seed=4 epoch=2/20 test_acc=0.8514
+arcface_supcon_cnn seed=4 epoch=3/20 test_acc=0.8719
+arcface_supcon_cnn seed=4 epoch=4/20 test_acc=0.8777
+arcface_supcon_cnn seed=4 epoch=5/20 test_acc=0.8821
+arcface_supcon_cnn seed=4 epoch=6/20 test_acc=0.8752
+arcface_supcon_cnn seed=4 epoch=7/20 test_acc=0.8825
+arcface_supcon_cnn seed=4 epoch=8/20 test_acc=0.8402
+arcface_supcon_cnn seed=4 epoch=9/20 test_acc=0.8893
+arcface_supcon_cnn seed=4 epoch=10/20 test_acc=0.8881
+arcface_supcon_cnn seed=4 epoch=11/20 test_acc=0.8925
+arcface_supcon_cnn seed=4 epoch=12/20 test_acc=0.8768
+arcface_supcon_cnn seed=4 epoch=13/20 test_acc=0.8845
+arcface_supcon_cnn seed=4 epoch=14/20 test_acc=0.8837
+arcface_supcon_cnn seed=4 epoch=15/20 test_acc=0.8585
+arcface_supcon_cnn seed=4 epoch=16/20 test_acc=0.8571
+arcface_supcon_cnn seed=4 epoch=17/20 test_acc=0.8765
+arcface_supcon_cnn seed=4 epoch=18/20 test_acc=0.8704
+arcface_supcon_cnn seed=4 epoch=19/20 test_acc=0.8865
+arcface_supcon_cnn seed=4 epoch=20/20 test_acc=0.8878
+
+================ FINAL MULTI-SEED SUMMARY ================
+                   seed                 EER                 AUC                 CDT  ... improvement_ratio split_index           transition_drift           permutation_p          
+                   mean       std      mean       std      mean       std      mean  ...               std        mean       std             mean       std          mean       std
+variant                                                                              ...                                                                                           
+arcface_cnn         2.0  1.581139  0.079977  0.001506  0.952326  0.015428  0.198921  ...          0.108726         7.2  2.167948         0.200759  0.015060      0.441958  0.183250
+arcface_supcon_cnn  2.0  1.581139  0.074662  0.004457  0.965568  0.012931  0.114752  ...          0.531987         9.2  4.324350         0.114684  0.010113      0.163636  0.265212
+softmax_cnn         2.0  1.581139  0.083279  0.001874  0.953128  0.016345  0.207801  ...          0.072851         9.2  6.760178         0.212449  0.021573      0.634765  0.213600
+
+[3 rows x 20 columns]
+
+PSD baseline:
+   seed           variant       EER       AUC
+0     0  psd_sgd_baseline  0.174050  0.873377
+1     1  psd_sgd_baseline  0.174066  0.875090
+2     2  psd_sgd_baseline  0.173299  0.877229
+3     3  psd_sgd_baseline  0.165861  0.877198
+4     4  psd_sgd_baseline  0.176799  0.874520
+
+Saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_02_q1_validation

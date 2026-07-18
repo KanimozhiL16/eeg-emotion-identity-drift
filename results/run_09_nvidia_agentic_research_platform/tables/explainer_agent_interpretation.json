@@ -1,0 +1,7 @@
+{
+  "main_finding": "The implemented SEED-V experiments show that EEG biometric identity is not stationary. Verification performance changes under emotional, spectral, and session variability.",
+  "run02_interpretation": "Cross-emotion analysis showed that cognitive-state transitions produce measurable identity drift, with mean EER around 0.0746 and mean AUC around 0.966.",
+  "run05_run06_interpretation": "PSD and region-level analyses linked biometric drift to spectral and spatial neural changes, supporting biological interpretation rather than treating drift as only a machine-learning artifact.",
+  "run07_interpretation": "Session-drift analysis showed degradation from S1 heldout EER 0.137977 to S1\u2192S2 EER 0.181822 and S1\u2192S3 EER 0.250755. Subject adaptation reduced S2 error by 11.44% and S3 error by 21.54%.",
+  "novelty_sentence": "Existing EEG biometric studies primarily report aggregate verification performance, whereas this work explicitly models, quantifies, biologically validates, and adaptively mitigates cognitive-state-induced EEG identity drift."
+}

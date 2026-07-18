@@ -1,0 +1,7 @@
+====================================================================================
+[C20] subjects n=16
+  Spearman rho=-0.436 p=0.0917 | Kendall tau=-0.360 p=0.0526
+  Theil-Sen slope=-14.2 (95% CI -28.2,+0.08913)
+  LOSO Spearman range [-0.744, -0.382] (sign-stable if all same sign)
+  READ-OFF: positive significant Spearman + sign-stable LOSO => theta drift tracks identity EER at subject level.
+DONE -> outputs/work3/12_subject_theta

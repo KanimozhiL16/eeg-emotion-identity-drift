@@ -1,0 +1,5 @@
+stage,std_beta,spearman_rho,spearman_p,n_conditions,total_ICs_removed
+stored,-0.133,-0.174,0.2276,50,0
+filter,-0.133,-0.174,0.2276,50,0
+ica,-0.139,-0.251,0.0787,50,95
+ica_asr,-0.139,-0.251,0.0787,50,95

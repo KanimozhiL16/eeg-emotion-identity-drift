@@ -1,0 +1,18 @@
+model,term,beta,p,detail
+OLS_naive,theta,0.37655,6.4127714249906376e-09,
+OLS_naive,alpha,-0.22514,0.0003482194723647414,
+OLS_naive,beta,-0.15572,0.17166488916378353,
+OLS_naive,gamma,0.06954,0.544408638618799,
+MixedLM(1|emotion_pair),theta,0.035,0.5501845056715023,
+MixedLM(1|emotion_pair),alpha,-0.01481,0.7814314526111643,
+MixedLM(1|emotion_pair),beta,-0.02511,0.7924971827358281,
+MixedLM(1|emotion_pair),gamma,0.01451,0.9124799554251128,
+MixedLM(1|transition),theta,0.38268,3.197505634625912e-09,
+OLS_cluster[emotion_pair],theta,0.37655,4.751840217001111e-05,
+OLS_cluster[transition],theta,0.37655,0.12015183603566909,
+MixedLM_theta_LRT,theta,0.035,0.5500833078551102,vs no-theta model
+OLS_seedcollapsed,theta,0.43034,0.004024076914940222,
+OLS_seedcollapsed,alpha,-0.2573,0.07424820378400465,
+OLS_seedcollapsed,beta,-0.17797,0.4933184405095101,
+OLS_seedcollapsed,gamma,0.07947,0.7611528102132485,
+permutation_theta,theta,0.37655,9.999000099990002e-05,10000 perms

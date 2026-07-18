@@ -1,0 +1,18 @@
+==============================================================================
+M6  bootstrap 95% CIs for the n=16 effects
+==============================================================================
+
+subject robustness (run_17_subject_robustness/subject_robustness.csv, n=16):
+  mean cross-session EER                 = 0.2266  95%CI[0.1658, 0.2993]  
+  SD of cross-session EER                = 0.1380  95%CI[0.0652, 0.1987]  
+  coefficient of variation               = 0.6092  95%CI[0.3213, 0.7923]  
+  observed range: [0.0323, 0.6439]  (min=S12, max=S7)
+
+adaptation reduction (run_16_adaptation_significance/persubject.csv):
+  session 2 abs. reduction               = 0.0195  95%CI[0.0038, 0.0466]  n=16
+  session 2 rel. reduction (%)           = 7.9355  95%CI[2.8799, 13.7143]  
+  session 3 abs. reduction               = 0.0257  95%CI[0.0094, 0.0528]  n=16
+  session 3 rel. reduction (%)           = 9.1265  95%CI[4.9074, 13.9153]  
+
+SAVED -> outputs/run_21_effect_cis/effect_cis.csv
+==============================================================================

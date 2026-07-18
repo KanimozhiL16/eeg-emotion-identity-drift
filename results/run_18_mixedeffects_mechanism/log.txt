@@ -1,0 +1,57 @@
+================================================================================
+M1 mechanism re-fit | source=outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv
+  n=250 rows | emotion_pairs=25 | transitions=2 | seeds=5
+================================================================================
+
+(0) Standardized OLS  R2=0.152  (manuscript Table 3 reference: R2~0.152, theta beta~+0.38)
+  [OLS_naive                 ] theta  beta=+0.3765  p=6.41e-09 ***  
+  [OLS_naive                 ] alpha  beta=-0.2251  p=0.000348 ***  
+  [OLS_naive                 ] beta   beta=-0.1557  p=0.172  ns  
+  [OLS_naive                 ] gamma  beta=+0.0695  p=0.544  ns  
+
+(1) PRIMARY  MixedLM  EER ~ bands + (1|emotion_pair)
+  [MixedLM(1|emotion_pair)   ] theta  beta=+0.0350  p=0.55  ns  
+  [MixedLM(1|emotion_pair)   ] alpha  beta=-0.0148  p=0.781  ns  
+  [MixedLM(1|emotion_pair)   ] beta   beta=-0.0251  p=0.792  ns  
+  [MixedLM(1|emotion_pair)   ] gamma  beta=+0.0145  p=0.912  ns  
+
+(1b) MixedLM  EER ~ bands + (1|transition)
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/statsmodels/regression/mixed_linear_model.py:1634: UserWarning: Random effects covariance is singular
+  warnings.warn(msg)
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/statsmodels/regression/mixed_linear_model.py:2054: UserWarning: The random effects covariance matrix is singular.
+  warnings.warn(_warn_cov_sing)
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/statsmodels/regression/mixed_linear_model.py:2245: UserWarning: The random effects covariance matrix is singular.
+  warnings.warn(_warn_cov_sing)
+/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+  [MixedLM(1|transition)     ] theta  beta=+0.3827  p=3.2e-09 ***  
+
+(2) Cluster-robust OLS
+  [OLS_cluster[emotion_pair] ] theta  beta=+0.3765  p=4.75e-05 ***  
+  [OLS_cluster[transition]   ] theta  beta=+0.3765  p=0.12  ns  
+
+(5) Theta beyond alpha (nested LRT under mixed model)
+  [MixedLM_theta_LRT         ] theta  beta=+0.0350  p=0.55  ns  vs no-theta model
+
+(3) Seed-collapsed OLS  n=50 unique conditions
+  [OLS_seedcollapsed         ] theta  beta=+0.4303  p=0.00402 **  
+  [OLS_seedcollapsed         ] alpha  beta=-0.2573  p=0.0742  ns  
+  [OLS_seedcollapsed         ] beta   beta=-0.1780  p=0.493  ns  
+  [OLS_seedcollapsed         ] gamma  beta=+0.0795  p=0.761  ns  
+
+(4) Block-permutation (theta), 10000 perms within transition
+  [permutation_theta         ] theta  beta=+0.3765  p=0.0001 ***  10000 perms
+
+SAVED -> outputs/run_18_mixedeffects_mechanism/mechanism_robust.csv
+================================================================================
+READ-OFF: report the PRIMARY MixedLM(1|emotion_pair) theta p in Table 3.
+If theta stays p<0.05 across MixedLM + cluster-robust + seed-collapsed + permutation,
+the mechanism is robust and the claim stands (stated correctly). If it collapses in the
+clustered models, soften to 'a correlate that does not survive clustering'.
+================================================================================

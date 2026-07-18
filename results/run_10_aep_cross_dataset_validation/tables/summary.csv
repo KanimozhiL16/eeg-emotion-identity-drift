@@ -1,0 +1,2 @@
+subjects,train_samples,test_samples,feature_dim,AUC,EER
+20,11099,11102,36,0.7314103044780026,0.33680512757303094

@@ -1,0 +1,15 @@
+==============================================================================
+STEP 2b  subject-adaptive threshold (H5)  | root: /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+==============================================================================
+columns: ['y_true', 'score', 'probe_subject', 'claimed_subject', 'comparison', 'probe_session']
+
+per-subject rows: 48
+
+--- H5 paired Wilcoxon (global vs subject-adaptive threshold) ---
+  [session 1] n=16 | global=0.1377 -> subject=0.1332 | mean reduction=0.0046 (3.3%) | Wilcoxon W=46.0, p=0.2552
+  [session 2] n=16 | global=0.1807 -> subject=0.1685 | mean reduction=0.0121 (6.7%) | Wilcoxon W=26.0, p=0.02899
+  [session 3] n=16 | global=0.2491 -> subject=0.2504 | mean reduction=-0.0013 (-0.5%) | Wilcoxon W=46.0, p=0.2744
+  [pooled (all sessions)] n=48 | global=0.1891 -> subject=0.1840 | mean reduction=0.0051 (2.7%) | Wilcoxon W=482.0, p=0.2769
+
+SAVED: outputs/run_11_statistics/subject_level_adaptation_eer.csv
+==============================================================================

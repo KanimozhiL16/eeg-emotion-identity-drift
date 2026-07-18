@@ -1,0 +1,36 @@
+==============================================================================
+STEP 4 BIOLOGY | root: /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+==============================================================================
+global table: outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv
+cols: ['enroll_session', 'test_session', 'enroll_emotion', 'test_emotion', 'transition', 'theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift', 'total_psd_drift', 'variant', 'seed', 'EER', 'AUC']
+band-drift cols: ['theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift']
+
+--- (1) Standardized regression band-drift -> EER ---
+  R2_standardized: 0.152  n=250
+  beta[theta_power_drift]: 0.3765, p=6.41e-09
+  beta[alpha_power_drift]: -0.2251, p=0.000348
+  beta[beta_power_drift]: -0.1557, p=0.172
+  beta[gamma_power_drift]: 0.06954, p=0.544
+  pearson[theta_power_drift]: 0.317, p=3.05e-07  FDR-q=1.22e-06
+  pearson[alpha_power_drift]: -0.1473, p=0.0198  FDR-q=0.0397
+  pearson[beta_power_drift]: 0.0379, p=0.551  FDR-q=0.551
+  pearson[gamma_power_drift]: 0.077, p=0.225  FDR-q=0.3
+
+--- (2) Region ranking (drift -> EER) ---
+region table: outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_region_psd_identity_eer.csv
+cols: ['enroll_session', 'test_session', 'enroll_emotion', 'test_emotion', 'transition', 'region', 'theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift', 'total_psd_drift', 'variant', 'seed', 'EER', 'AUC']
+  region[Temporal]: 0.1623, p=0.0102  FDR-q=0.0508, n=250
+  region[Central/Motor]: 0.1179, p=0.0627  FDR-q=0.129, n=250
+  region[Frontal]: -0.112, p=0.0772  FDR-q=0.129, n=250
+  region[Occipital]: 0.1002, p=0.114  FDR-q=0.142, n=250
+  region[Parietal]: 0.009493, p=0.881  FDR-q=0.881, n=250
+
+--- figures ---
+  fig1 saved
+  fig2 saved
+  fig3 saved
+  fig4 saved
+
+SAVED stats: outputs/run_13_biological/biological_stats.csv
+figures dir: outputs/run_13_biological/figures
+==============================================================================

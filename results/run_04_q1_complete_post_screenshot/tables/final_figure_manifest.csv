@@ -1,0 +1,14 @@
+figure_file,purpose
+fig01_multiseed_eer_boxplot.png,Shows robustness across seeds and compares proposed model against baselines.
+fig02_cross_emotion_eer_heatmap.png,Identifies which cognitive-state transitions are hardest for verification.
+fig03_cross_emotion_identity_drift_heatmap.png,Shows representation-level cognitive drift independent of final aggregate EER.
+fig04_eer_vs_drift_with_cdt_ci.png,Main Q1 figure linking identity drift to verification degradation with CDT confidence band.
+fig05_phase_transition_piecewise_model.png,Mathematically supports phase-transition behavior under cognitive drift.
+fig06_eer_across_drift_severity_groups.png,Ablation showing when cognitive drift degrades verification.
+fig07_worst_case_cross_emotion_transitions.png,Highlights specific cognitive-state pairs causing highest biometric error.
+fig08_subjectwise_drift_boxplot.png,Shows inter-subject variability in representation stability.
+fig09_eer_distribution_cross_emotion.png,Shows overall spread of cognitive-state verification difficulty.
+fig10_score_level_roc_curve.png,Score-level ROC validates verification behavior using genuine/impostor decisions.
+fig11_score_level_det_curve.png,DET curve provides biometric-system operating trade-off.
+fig12_score_distribution_genuine_vs_impostor.png,Shows genuine/impostor separability and threshold placement.
+fig13_threshold_error_tradeoff.png,Shows how threshold choice controls FPR/FNR trade-off.

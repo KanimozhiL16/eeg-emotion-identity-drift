@@ -1,0 +1,7 @@
+component,use
+NVIDIA NeMo Agent Toolkit,"Multi-agent orchestration for Scientist, Critic, Explainer, and Reproducibility agents."
+NVIDIA NIM / Nemotron,"Reasoning layer for experiment planning, protocol auditing, and report generation."
+NVIDIA Triton Inference Server,Future deployment of trained EEG biometric verification models.
+TensorRT,Future model compression and low-latency EEG authentication inference.
+CUDA/cuDNN/PyTorch,GPU training and accelerated EEG feature/model computation.
+Qiskit/PennyLane,Optional quantum-classical biometric baselines.

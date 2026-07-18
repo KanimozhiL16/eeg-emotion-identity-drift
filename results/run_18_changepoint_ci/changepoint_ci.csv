@@ -1,0 +1,2 @@
+source,drift_col,eer_col,n,breakpoint,bp_ci_lo,bp_ci_hi,perm_p,n_perm,rss_improve_pct,mean_drift
+outputs/run_02_q1_validation/tables/final_worst_cross_emotion_conditions.csv,mean_drift,EER,15,0.12179406984251431,0.12132512148532824,0.12915022551887115,0.8794120587941205,10000,7.0221311018246135,0.12411376424133776

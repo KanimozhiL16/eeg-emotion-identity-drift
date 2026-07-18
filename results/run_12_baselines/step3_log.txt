@@ -1,0 +1,30 @@
+==============================================================================
+STEP 3 BASELINES | root: /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+==============================================================================
+subjects: 16 | S1/S2/S3: (37600, 62, 400) (33856, 62, 400) (42688, 62, 400)
+
+--- Baseline A: PSD band-power + cosine ---
+  PSD+cosine S1: EER=0.1834 AUC=0.8953
+  PSD+cosine S1->S2: EER=0.2286 AUC=0.8569
+  PSD+cosine S1->S3: EER=0.2722 AUC=0.8076
+
+--- Baseline B: EEGNet embedding + cosine ---
+  device: cuda
+  training EEGNet (20 epochs)...
+  EEGNet+cosine S1: EER=0.0166 AUC=0.9986
+  EEGNet+cosine S1->S2: EER=0.1586 AUC=0.8967
+  EEGNet+cosine S1->S3: EER=0.1923 AUC=0.8526
+
+==============================================================================
+SAVED: outputs/run_12_baselines/baseline_comparison.csv
+                         method                split      EER      AUC
+                     PSD+cosine          S1 (within) 0.183406 0.895308
+                     PSD+cosine               S1->S2 0.228620 0.856872
+                     PSD+cosine               S1->S3 0.272193 0.807553
+                  EEGNet+cosine          S1 (within) 0.016563 0.998646
+                  EEGNet+cosine               S1->S2 0.158620 0.896717
+                  EEGNet+cosine               S1->S3 0.192312 0.852556
+         P4 Mahalanobis (RUN03) pooled cross-session 0.318200 0.749500
+P4 lightweight+adaptive (RUN07)               S1->S2 0.181800 0.898000
+P4 lightweight+adaptive (RUN07)               S1->S3 0.250800 0.819300
+==============================================================================

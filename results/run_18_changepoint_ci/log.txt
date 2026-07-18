@@ -1,0 +1,29 @@
+==============================================================================================
+CANDIDATE (drift,EER) COLUMN PAIRS  (target: mean~0.116, breakpoint~0.124)
+==============================================================================================
+                                                                                             file         drift_col eer_col    n   mean_x  breakpoint  improve_pct
+                     outputs/run_02_q1_validation/tables/final_worst_cross_emotion_conditions.csv        mean_drift     EER   15 0.124114    0.121794     7.022131
+                                 outputs/run_01_baseline/tables/drift_vs_eer_validation_table.csv       drift_index     EER   25 0.117402    0.110065    59.981424
+                              outputs/run_02_q1_validation/tables/main_multiseed_results_live.csv  transition_drift     EER   15 0.175964    0.123759    27.201727
+                                   outputs/run_02_q1_validation/tables/main_multiseed_results.csv  transition_drift     EER   15 0.175964    0.123759    27.201727
+                          outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv        mean_drift     EER  375 0.179402    0.124208     5.608090
+outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv   total_psd_drift     EER  250 0.003829    0.005067     6.450140
+outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_region_psd_identity_eer.csv   total_psd_drift     EER 1250 0.003829    0.003350     1.054546
+      outputs/run_05_q1_psd_biological_validation/tables/merged_psd_identity_drift_validation.csv   total_psd_drift     EER  250 0.003159    0.001656     3.447054
+outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv alpha_power_drift     EER  250 0.001195    0.001725     0.824796
+      outputs/run_05_q1_psd_biological_validation/tables/merged_psd_identity_drift_validation.csv alpha_power_drift     EER  250 0.001090    0.001780     3.852736
+outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv theta_power_drift     EER  250 0.001187    0.001030     2.336552
+outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_region_psd_identity_eer.csv alpha_power_drift     EER 1250 0.001195    0.000613     0.477772
+
+SELECTED -> outputs/run_02_q1_validation/tables/final_worst_cross_emotion_conditions.csv :: mean_drift vs EER  (n=15, mean=0.1241, breakpoint=0.1218)
+
+==============================================================================================
+change-point on selected column | n=15 | breakpoint=0.1218 | improvement=7.0%
+permutation p (10000) = 0.87941  (exceedances=8794)
+breakpoint 95% CI (bootstrap 2000) = [0.1213, 0.1292]
+
+SAVED figure -> outputs/run_18_changepoint_ci/Fig03b_change_point.png
+==============================================================================================
+READ-OFF: breakpoint 0.122 (95% CI 0.121-0.129); permutation p=0.8794; piecewise fit ~7% lower RSS than a line.  mean drift=0.124.
+Confirm the SELECTED line above shows mean~0.116 & breakpoint~0.124 before I edit the paper.
+==============================================================================================

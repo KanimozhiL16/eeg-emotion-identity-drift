@@ -1,0 +1,27 @@
+================================================================================
+M2  state (emotion) vs time (session) decomposition  |  run_07 functions
+================================================================================
+  session 3: F=(14400, 434)  emotions=[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+  session 2: F=(14400, 434)  emotions=[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+  session 1: F=(14400, 434)  emotions=[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+
+-- 2x2 cell mean EER (pooled) --
+  baseline (same sess, same emo) = 0.1671
+  STATE-only (same sess, diff emo) = 0.2107
+  TIME-only  (diff sess, same emo) = 0.2412
+  BOTH       (diff sess, diff emo) = 0.2675
+
+-- per-subject deltas vs baseline --
+  dEER_state = +0.0474  95%CI[+0.0349,+0.0609]  Wilcoxon p=3.05e-05  (n=16)
+  dEER_time  = +0.0768  95%CI[+0.0314,+0.1431]  Wilcoxon p=0.00101  (n=16)
+  dEER_both  = +0.0999  95%CI[+0.0552,+0.1646]  Wilcoxon p=9.16e-05  (n=16)
+
+-- two-way OLS  EER ~ session_changed + emotion_changed --
+     session_changed: beta=+0.0603  p=1.25e-18
+     emotion_changed: beta=+0.0321  p=9.54e-07
+
+================================================================================
+READ-OFF: cognitive-STATE dEER=+0.0474 vs TIME dEER=+0.0768  (state/time ratio=0.62).
+  Both significant & comparable -> keep 'cognitive-state AND cross-session' framing.
+  Time dominates, state small/ns  -> retitle to 'cross-session' (state = correlational only).
+================================================================================

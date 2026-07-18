@@ -1,0 +1,42 @@
+================================================================================
+RUN05: PSD BAND ANALYSIS + BIOLOGICAL DRIFT VALIDATION
+================================================================================
+Detected real session files:
+ - SEEDV_Q1_SAFE_SESSION1_16sub.npz
+ - SEEDV_Q1_SAFE_SESSION2_16sub.npz
+ - SEEDV_Q1_SAFE_SESSION3_16sub.npz
+
+Processing SEEDV_Q1_SAFE_SESSION1_16sub.npz: X=(37600, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+
+Processing SEEDV_Q1_SAFE_SESSION2_16sub.npz: X=(33856, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+
+Processing SEEDV_Q1_SAFE_SESSION3_16sub.npz: X=(42688, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+Using identity drift table: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv
+Traceback (most recent call last):
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/pandas/compat/_optional.py", line 158, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/home/nvidia/miniconda_311/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tabulate'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/05_q1_psd_biological_drift_analysis.py", line 446, in <module>
+    main()
+    ~~~~^^
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/05_q1_psd_biological_drift_analysis.py", line 426, in main
+    write_report(psd_df, psd_drift_df, merged, corr_df, source_path)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/05_q1_psd_biological_drift_analysis.py", line 400, in write_report
+    report.append(corr_df.round(4).to_markdown(index=False))
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/pandas/core/frame.py", line 2983, in to_markdown
+    tabulate = import_optional_dependency("tabulate")
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/pandas/compat/_optional.py", line 161, in import_optional_dependency
+    raise ImportError(msg) from err
+ImportError: `Import tabulate` failed.  Use pip or conda to install the tabulate package.

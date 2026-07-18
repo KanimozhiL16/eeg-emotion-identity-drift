@@ -1,0 +1,192 @@
+================================================================================
+P4 PROJECT AUDIT  (result files vs paper values)
+ROOT: /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+================================================================================
+scanned 278 text/result files (venv, checkpoints, raw arrays skipped)
+
+--------------------------------------------------------------------------------
+VALUE                                  STATUS  FOUND-IN (up to 3 files)
+--------------------------------------------------------------------------------
+within-session EER 0.131               OK      README.md; scripts/audit_project.py; outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv
+S1->S2 EER 0.169                       OK      README.md; scripts/audit_project.py; outputs/run_01_baseline/tables/controlled_identity_drift_subjectwise.csv
+cross-session EER 0.246                OK      README.md; scripts/audit_project.py; outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv
+Friedman p=0.003                       OK      README.md; scripts/audit_project.py; outputs/run_01_baseline/tables/controlled_identity_drift_subjectwise.csv
+Kendall W=0.355                        OK      scripts/audit_project.py; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv; outputs/run_11_statistics/step2_log.txt
+PSD within 0.183                       OK      scripts/audit_project.py; scripts/reve_benchmark.py; outputs/run_02_q1_validation/logs/full_validation_output.txt
+PSD S1->S2 0.229                       OK      scripts/audit_project.py; scripts/reve_benchmark.py; outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv
+PSD S1->S3 0.272                       OK      scripts/audit_project.py; scripts/reve_benchmark.py; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv
+EEGNet within 0.011                    OK      scripts/audit_project.py; scripts/reve_benchmark.py; outputs/run_01_baseline/metrics/train_history.csv
+EEGNet 0.190                           OK      scripts/audit_project.py; scripts/reve_benchmark.py; outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv
+EEGNet 0.245                           OK      scripts/audit_project.py; scripts/reve_benchmark.py; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv
+REVE 0.251                             OK      scripts/audit_project.py; scripts/step2c_adaptation_significance.py; scripts/step2d_adaptation_significance.py
+REVE 0.313                             OK      scripts/audit_project.py; outputs/run_03_q1_improvements_fixed/tables/run03_emotionwise_mahalanobis_results.csv; outputs/run_06_q1_levelup_biological_embedding_analysis/tables/fdr_corrected_psd_identity_eer_correlations.csv
+REVE 0.308                             OK      scripts/audit_project.py; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv; outputs/run_11_statistics/step2_log.txt
+Mahalanobis 0.318                      OK      scripts/audit_project.py; scripts/step3_baselines.py; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv
+theta beta +0.43                       OK      scripts/audit_project.py; scripts/20_M3_theta_artifact_robustness.py; scripts/21_M3_theta_robustness_faithful.py
+theta z-scored 0.79                    OK      scripts/audit_project.py; outputs/run_01_baseline/tables/controlled_identity_drift_subjectwise.csv; outputs/run_02_q1_validation/logs/full_validation_output.txt
+theta z-scored 0.91                    OK      scripts/audit_project.py; outputs/run_01_baseline/tables/controlled_identity_drift_subjectwise.csv; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv
+theta ICA baseline 0.36                OK      scripts/audit_project.py; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv; outputs/run_03_q1_improvements_fixed/tables/run03_subject_adaptive_thresholds.csv
+theta ICA cleaned 0.40                 OK      scripts/audit_project.py; scripts/03_q1_drift_invariant_adaptive_mahalanobis.py; outputs/run_06_q1_levelup_biological_embedding_analysis/tables/fdr_corrected_psd_identity_eer_correlations.csv
+manip-check mean 34.5%                 OK      scripts/audit_project.py; outputs/manip_check.log; outputs/manip_fig_only.log
+manip t(15)=5.96                       OK      scripts/audit_project.py; scripts/manip_fig_only.py; outputs/manip_check.log
+manip Cohen d=1.49                     OK      scripts/audit_project.py; outputs/manip_check.log; outputs/manip_fig_only.log
+SEED-IV PSD 0.233                      OK      scripts/audit_project.py; outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv
+SEED-IV PSD 0.324                      OK      scripts/audit_project.py; outputs/run_19_state_vs_time/persubject.csv
+SEED-IV PSD 0.362                      OK      scripts/audit_project.py; outputs/run_19_state_vs_time/persubject.csv; outputs/work3/21_M3_faithful/m3f.log
+linear probe 0.10                      OK      environment.yml; requirements.txt; scripts/audit_project.py
+linear probe 0.11                      OK      scripts/audit_project.py; scripts/35_changepoint_ci.py; outputs/manip_check.log
+m11 state dEER 0.047                   OK      scripts/audit_project.py; outputs/run_01_baseline/tables/controlled_identity_drift_subjectwise.csv; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv
+m11 time dEER 0.077                    OK      scripts/audit_project.py; outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv; outputs/run_02_q1_validation/tables/final_subject_level_drift_summary.csv
+m11 both dEER 0.100                    OK      scripts/audit_project.py; outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv; outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv
+window count S1 37600                  OK      README.md; data/raw_npz/sessionwise_master_summary.csv; data/verified/brev_uploaded_npz_verification.csv
+window count S2 33856                  OK      README.md; data/raw_npz/sessionwise_master_summary.csv; data/verified/brev_uploaded_npz_verification.csv
+window count S3 42688                  OK      README.md; data/raw_npz/sessionwise_master_summary.csv; data/verified/brev_uploaded_npz_verification.csv
+total windows 114144                   OK      README.md; scripts/audit_project.py; scripts/00_verify_uploaded_npz.py
+
+================================================================================
+ALL paper values were located in the project's result files.
+================================================================================
+
+--- RESULT CSV INVENTORY (path : header) ---
+  data/raw_npz/sessionwise_master_summary.csv : session,file,windows,subjects,shape,emotion_counts
+  data/verified/brev_uploaded_npz_verification.csv : file,shape,windows,session,subjects,emotion_counts
+  manuscript_assets/tables/T1a_session_verification.csv : comparison,probe_session,EER,AUC,threshold,adaptive_balanced_error,n_scores
+  manuscript_assets/tables/T1b_session_drift_summary.csv : probe_session,mean,std,median,count,EER,AUC,adaptive_balanced_error
+  manuscript_assets/tables/T2_statistics_H1_H5.csv : hypothesis,test,statistic,p_value,detail
+  manuscript_assets/tables/T3_baselines.csv : method,split,EER,AUC
+  manuscript_assets/tables/T4_capacity_ablation.csv : capacity,params,EER_within,EER_S2,EER_S3,within_to_cross_gap
+  manuscript_assets/tables/T5a_regression_band_contributions.csv : level,region,target,feature,standardized_beta
+  manuscript_assets/tables/T5b_biological_stats.csv : metric,value,p_value,detail
+  manuscript_assets/tables/T6a_adaptation_significance.csv : session,best_fraction,EER_baseline,EER_adapted,rel_reduction_pct,wilcoxon_W,p_value,n
+  manuscript_assets/tables/T6b_adaptation_persubject.csv : session,subject,EER_baseline,EER_adapted
+  manuscript_assets/tables/T7a_aep_summary.csv : subjects,train_samples,test_samples,feature_dim,AUC,EER
+  manuscript_assets/tables/T7b_aep_scores.csv : true_subject,claimed_subject,score
+  outputs/csv/manip_check_confusion.csv : true\pred,Disgust,Fear,Sad,Neutral,Happy
+  outputs/csv/manip_check_persubject.csv : subject,emotion_decoding_acc,chance,above_chance
+  outputs/run_01_baseline/metrics/train_history.csv : epoch,train_loss,train_acc,test_loss,test_acc,seconds
+  outputs/run_01_baseline/tables/change_point_statistical_test.csv : linear_mse,piecewise_mse,mse_improvement,improvement_ratio,best_split_index,phase_transition_drift,cdt_bootstrap_mean,pe
+  outputs/run_01_baseline/tables/controlled_identity_drift_matrix.csv : enroll_emotion,Disgust,Fear,Sad,Neutral,Happy
+  outputs/run_01_baseline/tables/controlled_identity_drift_subjectwise.csv : subject,enroll_emotion_id,test_emotion_id,enroll_emotion,test_emotion,n_enroll,n_test,within_sim,cross_sim,drift_index
+  outputs/run_01_baseline/tables/controlled_identity_drift_summary.csv : rows_used,mean_drift,std_drift,min_drift,max_drift,mean_cross_similarity,mean_within_similarity
+  outputs/run_01_baseline/tables/cross_emotion_auc_matrix.csv : ,Disgust,Fear,Sad,Neutral,Happy
+  outputs/run_01_baseline/tables/cross_emotion_detailed_results.csv : enroll_emotion,test_emotion,EER,AUC,genuine_scores,impostor_scores
+  outputs/run_01_baseline/tables/cross_emotion_eer_matrix.csv : ,Disgust,Fear,Sad,Neutral,Happy
+  outputs/run_01_baseline/tables/drift_group_eer_ablation.csv : drift_group,samples,standard_EER,standard_AUC,drift_normalized_EER,drift_normalized_AUC
+  outputs/run_01_baseline/tables/drift_penalty_alpha_ablation.csv : alpha,EER,AUC
+  outputs/run_01_baseline/tables/drift_vs_eer_validation_table.csv : enroll_emotion,test_emotion,EER,AUC,genuine_scores,impostor_scores,drift_index
+  outputs/run_01_baseline/tables/same_vs_cross_emotion_summary.csv : same_emotion_mean_eer,same_emotion_std_eer,cross_emotion_mean_eer,cross_emotion_std_eer,same_emotion_mean_auc,cross_emot
+  outputs/run_02_q1_validation/figures/final_q1_visuals/drift_group_ablation_summary.csv : drift_group,mean_EER,std_EER,mean_AUC,n
+  outputs/run_02_q1_validation/figures/final_q1_visuals/final_visual_summary.csv : best_variant,mean_EER,std_EER,mean_AUC,std_AUC,CDT_mean,CDT_95_low,CDT_95_high,phase_transition_drift,n_cross_emotion_co
+  outputs/run_02_q1_validation/logs/trainlog_arcface_cnn_seed0.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_cnn_seed1.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_cnn_seed2.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_cnn_seed3.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_cnn_seed4.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_supcon_cnn_seed0.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_supcon_cnn_seed1.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_supcon_cnn_seed2.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_supcon_cnn_seed3.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_arcface_supcon_cnn_seed4.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_softmax_cnn_seed0.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_softmax_cnn_seed1.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_softmax_cnn_seed2.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_softmax_cnn_seed3.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/logs/trainlog_softmax_cnn_seed4.csv : seed,variant,epoch,train_loss,train_acc,test_acc
+  outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv : seed,variant,enroll_emotion,test_emotion,EER,AUC,mean_drift
+  outputs/run_02_q1_validation/tables/final_drift_eer_correlation_stats.csv : variant,pearson_r,pearson_p,spearman_r,spearman_p
+  outputs/run_02_q1_validation/tables/final_eer_vs_drift_cdt_summary.csv : variant,cdt_mean,cdt_95_low,cdt_95_high,mean_eer,std_eer,mean_auc,std_auc
+  outputs/run_02_q1_validation/tables/final_q1_figure_manifest.csv : figure_file
+  outputs/run_02_q1_validation/tables/final_real_q1_figure_manifest.csv : figure_file,purpose
+  outputs/run_02_q1_validation/tables/final_statistical_significance_tests.csv : comparison,baseline_mean_EER,proposed_mean_EER,absolute_EER_reduction,relative_EER_reduction_percent,paired_t_p,wilcoxon
+  outputs/run_02_q1_validation/tables/final_subject_level_drift_summary.csv : subject,drift_index
+  outputs/run_02_q1_validation/tables/final_worst_cross_emotion_conditions.csv : seed,variant,enroll_emotion,test_emotion,EER,AUC,mean_drift
+  outputs/run_02_q1_validation/tables/identity_drift_all_seeds.csv : seed,variant,subject,enroll_emotion,test_emotion,cross_similarity,drift_index
+  outputs/run_02_q1_validation/tables/main_multiseed_results.csv : seed,variant,EER,AUC,CDT,linear_mse,piecewise_mse,improvement_ratio,split_index,transition_drift,permutation_p
+  outputs/run_02_q1_validation/tables/main_multiseed_results_live.csv : seed,variant,EER,AUC,CDT,linear_mse,piecewise_mse,improvement_ratio,split_index,transition_drift,permutation_p
+  outputs/run_02_q1_validation/tables/psd_baseline_results.csv : seed,variant,EER,AUC
+  outputs/run_02_q1_validation/tables/real_drift_group_ablation_summary.csv : drift_group,count,mean,std
+  outputs/run_02_q1_validation/tables/real_effect_size_significance_summary.csv : proposed_variant,baseline_variant,baseline_mean_EER,proposed_mean_EER,absolute_EER_reduction,relative_EER_reduction_perc
+  outputs/run_02_q1_validation/tables/score_level_roc_det_summary.csv : AUC,EER,EER_threshold,genuine_scores,impostor_scores,total_scores
+  outputs/run_02_q1_validation/tables/summary_mean_std_by_variant.csv : ,seed,seed,EER,EER,AUC,AUC,CDT,CDT,linear_mse,linear_mse,piecewise_mse,piecewise_mse,improvement_ratio,improvement_ratio
+  outputs/run_03_q1_improvements_fixed/tables/run03_emotionwise_mahalanobis_results.csv : test_emotion,samples,EER,AUC,threshold
+  outputs/run_03_q1_improvements_fixed/tables/run03_improvement_summary.csv : method,EER,AUC,threshold,n_scores
+  outputs/run_03_q1_improvements_fixed/tables/run03_subject_adaptive_thresholds.csv : subject,subject_EER,subject_AUC,adaptive_threshold
+  outputs/run_04_q1_complete_post_screenshot/tables/cdt_and_drift_eer_statistics.csv : variant,cdt_mean,cdt_95_low,cdt_95_high,pearson_r,pearson_p,spearman_r,spearman_p,mean_eer,std_eer,n_conditions
+  outputs/run_04_q1_complete_post_screenshot/tables/cross_emotion_eer_matrix.csv : enroll_emotion,Disgust,Fear,Happy,Neutral,Sad
+  outputs/run_04_q1_complete_post_screenshot/tables/cross_emotion_identity_drift_matrix.csv : enroll_emotion,Disgust,Fear,Happy,Neutral,Sad
+  outputs/run_04_q1_complete_post_screenshot/tables/drift_group_eer_ablation.csv : drift_group,count,mean,std
+  outputs/run_04_q1_complete_post_screenshot/tables/final_figure_manifest.csv : figure_file,purpose
+  outputs/run_04_q1_complete_post_screenshot/tables/model_performance_summary.csv : variant,mean_EER,std_EER,mean_AUC,std_AUC
+  outputs/run_04_q1_complete_post_screenshot/tables/phase_transition_change_point_test.csv : linear_mse,piecewise_mse,improvement_ratio,best_split_index,phase_transition_drift,cdt_mean,permutation_p_value,n_permut
+  outputs/run_04_q1_complete_post_screenshot/tables/score_level_roc_det_summary.csv : AUC,EER,EER_threshold,total_scores,genuine_scores,impostor_scores
+  outputs/run_04_q1_complete_post_screenshot/tables/subject_level_identity_drift_summary.csv : subject_level_mean_drift
+  outputs/run_04_q1_complete_post_screenshot/tables/worst_case_cross_emotion_transitions.csv : transition,eer
+  outputs/run_05_q1_psd_biological_validation/tables/merged_psd_identity_drift_validation.csv : enroll_session,test_session,enroll_emotion,test_emotion,transition,theta_power_drift,alpha_power_drift,beta_power_drift,
+  outputs/run_05_q1_psd_biological_validation/tables/psd_band_drift_cross_emotion.csv : enroll_session,test_session,enroll_emotion,test_emotion,transition,theta_power_drift,alpha_power_drift,beta_power_drift,
+  outputs/run_05_q1_psd_biological_validation/tables/psd_bandpower_by_session_emotion.csv : session_file,session_name,emotion_id,emotion,n_windows,theta,alpha,beta,gamma
+  outputs/run_05_q1_psd_biological_validation/tables/psd_drift_correlation_statistics.csv : predictor,target,n,pearson_r,pearson_p,spearman_r,spearman_p
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/channel_bandpower_by_session_emotion.csv : session_file,session_index,emotion_id,emotion,channel,region,n_windows,theta_power,alpha_power,beta_power,gamma_power
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/fdr_corrected_psd_identity_eer_correlations.csv : level,region,predictor,target,n,pearson_r,pearson_p,spearman_r,spearman_p,pearson_q_fdr,spearman_q_fdr
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/global_psd_drift_cross_emotion.csv : enroll_session,test_session,enroll_emotion,test_emotion,transition,theta_power_drift,alpha_power_drift,beta_power_drift,
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv : enroll_session,test_session,enroll_emotion,test_emotion,transition,theta_power_drift,alpha_power_drift,beta_power_drift,
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_region_psd_identity_eer.csv : enroll_session,test_session,enroll_emotion,test_emotion,transition,region,theta_power_drift,alpha_power_drift,beta_power
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/region_bandpower_by_session_emotion.csv : session_file,session_index,emotion_id,emotion,region,theta_power,alpha_power,beta_power,gamma_power
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/region_psd_drift_cross_emotion.csv : enroll_session,test_session,enroll_emotion,test_emotion,transition,region,theta_power_drift,alpha_power_drift,beta_power
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/regression_model_psd_predicts_eer_identity_drift.csv : level,region,target,n,model,alpha,R2_in_sample,RMSE
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/regression_standardized_band_contributions.csv : level,region,target,feature,standardized_beta
+  outputs/run_06_q1_levelup_biological_embedding_analysis/tables/spectral_embedding_pca_trajectory_coordinates.csv : session_file,session_index,emotion_id,emotion,PC1,PC2,explained_var_PC1,explained_var_PC2
+  outputs/run_07_seedv_session_drift_subject_adaptation/tables/adaptation_improvement_summary.csv : probe_session,baseline_EER_no_adaptation,best_EER_with_adaptation,best_adaptation_fraction,absolute_EER_reduction,relati
+  outputs/run_07_seedv_session_drift_subject_adaptation/tables/session_drift_performance_summary.csv : probe_session,mean,std,median,count,EER,AUC,adaptive_balanced_error
+  outputs/run_07_seedv_session_drift_subject_adaptation/tables/session_verification_results.csv : comparison,probe_session,EER,AUC,threshold,adaptive_balanced_error,n_scores
+  outputs/run_07_seedv_session_drift_subject_adaptation/tables/subject_adaptation_results.csv : probe_session,adaptation_fraction,EER,AUC,threshold,adaptive_balanced_error,n_scores
+  outputs/run_07_seedv_session_drift_subject_adaptation/tables/subject_session_identity_drift.csv : subject,identity_drift,probe_session,comparison
+  outputs/run_09_nvidia_agentic_research_platform/tables/critic_agent_protocol_audit.csv : run,required_item,exists,file_count
+  outputs/run_09_nvidia_agentic_research_platform/tables/nvidia_platform_mapping.csv : component,use
+  outputs/run_09_nvidia_agentic_research_platform/tables/reproducibility_agent_manifest.csv : run,file_name,file_type,full_path,size_kb
+  outputs/run_09_nvidia_agentic_research_platform/tables/scientist_agent_next_experiments.csv : priority,experiment,reason,expected_output
+  outputs/run_10_aep_cross_dataset_validation/tables/summary.csv : subjects,train_samples,test_samples,feature_dim,AUC,EER
+  outputs/run_10_aep_cross_dataset_validation/tables/verification_scores.csv : true_subject,claimed_subject,score
+  outputs/run_11_statistics/statistics_summary.csv : hypothesis,test,statistic,p_value,detail
+  outputs/run_11_statistics/subject_level_adaptation_eer.csv : session,subject,balanced_error_global,balanced_error_subject
+  outputs/run_12_baselines/baseline_comparison.csv : method,split,EER,AUC
+  outputs/run_13_biological/biological_stats.csv : metric,value,p_value,detail
+  outputs/run_14_capacity/capacity_ablation.csv : capacity,params,EER_within,EER_S2,EER_S3,within_to_cross_gap
+  outputs/run_16_adaptation_significance/adaptation_significance.csv : session,best_fraction,EER_baseline,EER_adapted,rel_reduction_pct,wilcoxon_W,p_value,n
+  outputs/run_16_adaptation_significance/persubject.csv : session,subject,EER_baseline,EER_adapted
+  outputs/run_17_subject_robustness/subject_robustness.csv : subject,EER_S1toS2,EER_S1toS3,mean_cross
+  outputs/run_18_changepoint_ci/candidates.csv : file,drift_col,eer_col,n,mean_x,breakpoint,improve_pct,score
+  outputs/run_18_changepoint_ci/changepoint_ci.csv : source,drift_col,eer_col,n,breakpoint,bp_ci_lo,bp_ci_hi,perm_p,n_perm,rss_improve_pct,mean_drift
+  outputs/run_18_changepoint_ci/changepoint_diagnostic.csv : n,mean_x,bp,improve,p,ci_lo,ci_hi,file,drift,mode,bp_gap
+  outputs/run_18_changepoint_ci/changepoint_final.csv : anchor_table,drift_col,n,breakpoint,ci_lo,ci_hi,gain_pct,perm_p,mean,slope_below,slope_above
+  outputs/run_18_mixedeffects_mechanism/mechanism_robust.csv : model,term,beta,p,detail
+  outputs/run_18_reve_benchmark/reve_eer.csv : protocol,REVE_EER,REVE_AUC
+  outputs/run_19_state_vs_time/cells.csv : session_changed,emotion_changed,mean,std,count
+  outputs/run_19_state_vs_time/conditions.csv : enrol_emotion,test_session,test_emotion,session_changed,emotion_changed,EER,AUC,n_probe
+  outputs/run_19_state_vs_time/deltas.csv : effect,dEER,ci_lo,ci_hi,wilcoxon_p,n
+  outputs/run_19_state_vs_time/m11_wilcoxon_fdr.csv : effect,desc,n,dEER_mean,wilcoxon_W,p_raw,rank,q_BH,p_Holm,sig_FDR_0.05
+  outputs/run_19_state_vs_time/persubject.csv : subject,session_changed,emotion_changed,EER
+  outputs/run_20_aep_within_vs_cross/aep_within_vs_cross.csv : experiment,EER_within,EER_cross,dEER
+  outputs/run_20_aep_within_vs_cross/persubject.csv : experiment,subject,EER_within,EER_cross,dEER
+  outputs/run_21_effect_cis/effect_cis.csv : quantity,estimate,ci_lo,ci_hi,detail
+  outputs/work3/10_csv_checks/cv_prediction.csv : cv,n,MAE,RMSE,pred_R2
+  outputs/work3/10_csv_checks/drift_index_variants.csv : transition,emotion_pair,D_unnorm,D_sigmanorm,EER
+  outputs/work3/11_band_recompute/per_condition_drift.csv : transition,emotion_pair,delta_drift,theta_drift,alpha_drift,beta_drift,gamma_drift,preproc
+  outputs/work3/11_band_recompute/regression_compare.csv : preproc,n,R2,theta_drift,alpha_drift,beta_drift,gamma_drift,theta_drift_p,alpha_drift_p,beta_drift_p,gamma_drift_p
+  outputs/work3/12_subject_theta/subject_theta_eer.csv : subject,theta_drift,cross_EER
+  outputs/work3/13_matcher_theta/matcher_theta.csv : transition,emotion_pair,theta_drift,EER_PSD,EER_Lightweight,EER_ArcFace
+  outputs/work3/13_matcher_theta/matcher_theta_summary.csv : matcher,n,std_beta,spearman_rho,spearman_p
+  outputs/work3/14_theta_mitigation/theta_mitigation.csv : subject,baseline_EER,theta_norm_EER,delta
+  outputs/work3/15_reve_probe/reve_probe.csv : protocol,REVE_frozen_cosine,REVE_linear_probe
+  outputs/work3/16_aep_theta/aep_theta.csv : subject,theta_drift_4ch,theta_drift_T7,cross_EER
+  outputs/work3/17_index_monotonic_cv/index_cv.csv : index,spearman_rho,spearman_p,kendall_tau,kendall_p,lin_R2,iso_R2,MAE,RMSE,pred_R2
+  outputs/work3/18_faithful_theta/subject_theta_faithful.csv : subject,theta_drift,cross_EER
+  outputs/work3/19_robust/recomputed_fullwindow_drift.csv : transition,emotion_pair,theta_drift,alpha_drift,beta_drift,gamma_drift,thetaZ_drift
+  outputs/work3/19_robust/subject_theta_fullwindow.csv : subject,theta_drift,cross_EER
+  outputs/work3/20_M3_theta/m3_beta_summary.csv : stage,std_beta,spearman_rho,spearman_p,n_conditions,total_ICs_removed
+  outputs/work3/20_M3_theta/m3_theta_robustness.csv : transition,emotion_pair,theta_stored,EER,theta_filter,theta_ica,theta_ica_asr
+  outputs/work3/20_M3_theta_ICLABEL/m3_beta_summary.csv : stage,std_beta,spearman_rho,spearman_p,n_conditions,total_ICs_removed
+  outputs/work3/20_M3_theta_ICLABEL/m3_theta_robustness.csv : transition,emotion_pair,theta_stored,EER,theta_filter,theta_ica
+  outputs/work3/21_M3_faithful/m3f_beta_summary.csv : stage,std_beta,spearman_rho,spearman_p,n,ICs_removed
+  outputs/work3/21_M3_faithful/m3f_theta_conditions.csv : test_session,enroll_emotion,test_emotion,theta_stored,EER,theta_power_drift,theta_filter,theta_ica
+
+DONE. Upload outputs/AUDIT_REPORT.txt for review.

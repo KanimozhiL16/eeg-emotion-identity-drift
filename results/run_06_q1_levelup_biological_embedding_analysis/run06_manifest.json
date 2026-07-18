@@ -1,0 +1,32 @@
+{
+  "output_folder": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_06_q1_levelup_biological_embedding_analysis",
+  "figures": [
+    "fig01_regionwise_psd_bandpower.png",
+    "fig02_global_alpha_drift_heatmap.png",
+    "fig02_global_beta_drift_heatmap.png",
+    "fig02_global_gamma_drift_heatmap.png",
+    "fig02_global_theta_drift_heatmap.png",
+    "fig03_global_total_psd_drift_heatmap.png",
+    "fig04_regionwise_total_psd_drift.png",
+    "fig05_total_psd_drift_vs_eer.png",
+    "fig07_region_band_correlation_with_eer.png",
+    "fig08_regression_band_contributions_to_eer.png",
+    "fig09_spectral_embedding_pca_trajectories.png",
+    "fig10_worst_cross_emotion_transitions_by_eer.png"
+  ],
+  "tables": [
+    "channel_bandpower_by_session_emotion.csv",
+    "fdr_corrected_psd_identity_eer_correlations.csv",
+    "global_psd_drift_cross_emotion.csv",
+    "merged_global_psd_identity_eer.csv",
+    "merged_region_psd_identity_eer.csv",
+    "region_bandpower_by_session_emotion.csv",
+    "region_psd_drift_cross_emotion.csv",
+    "regression_model_psd_predicts_eer_identity_drift.csv",
+    "regression_standardized_band_contributions.csv",
+    "spectral_embedding_pca_trajectory_coordinates.csv"
+  ],
+  "report": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_06_q1_levelup_biological_embedding_analysis/report/run06_q1_levelup_report.md",
+  "identity_source": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv",
+  "novelty_sentence": "Existing EEG biometric studies primarily report aggregate verification performance. In contrast, this work explicitly models identity as a dynamic distribution and validates cognitive-state-induced biometric drift using embedding-level, decision-level, spectral-band, and region-level evidence."
+}

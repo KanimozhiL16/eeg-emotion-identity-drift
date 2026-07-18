@@ -1,0 +1,33 @@
+{
+  "run": "run_07_seedv_session_drift_subject_adaptation",
+  "project_root": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC",
+  "data_dir": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/data/processed/sessionwise",
+  "session_files": [
+    "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/data/processed/sessionwise/SEEDV_Q1_SAFE_SESSION1_16sub.npz",
+    "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/data/processed/sessionwise/SEEDV_Q1_SAFE_SESSION2_16sub.npz",
+    "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/data/processed/sessionwise/SEEDV_Q1_SAFE_SESSION3_16sub.npz"
+  ],
+  "outputs": {
+    "figures": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_07_seedv_session_drift_subject_adaptation/figures",
+    "tables": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_07_seedv_session_drift_subject_adaptation/tables",
+    "report": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_07_seedv_session_drift_subject_adaptation/report"
+  },
+  "tables": [
+    "score_level_session_verification_scores.csv",
+    "session_verification_results.csv",
+    "subject_session_identity_drift.csv",
+    "subject_adaptation_results.csv",
+    "session_drift_performance_summary.csv",
+    "adaptation_improvement_summary.csv"
+  ],
+  "figures": [
+    "fig01_sessionwise_eer_degradation.png",
+    "fig02_subject_session_drift_boxplot.png",
+    "fig03_session_drift_vs_eer.png",
+    "fig04_adaptive_threshold_comparison.png",
+    "fig05_subject_adaptation_curve.png",
+    "fig06_score_level_session_roc.png",
+    "fig07_session_score_distribution.png"
+  ],
+  "main_claim": "SEED-V identity representations are evaluated under session-level temporal variability, and subject-adaptive threshold/prototype update is tested as a mitigation strategy."
+}

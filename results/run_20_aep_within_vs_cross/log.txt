@@ -1,0 +1,18 @@
+================================================================================
+M3  AEP within-session vs cross-session degradation
+================================================================================
+  X=(22201, 4, 512)  subjects=20  fs=256
+  experiments present: [np.int64(1), np.int64(2), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(10)]  (ex01/ex02 carry sessions [np.int64(1), np.int64(2), np.int64(3)])
+  features: (22201, 32)
+
+[ex01_resting_eyes_open]  EER_within=0.1878  EER_cross(s2+s3)=0.2366  dEER=+0.0488
+
+[ex02_resting_eyes_closed]  EER_within=0.2238  EER_cross(s2+s3)=0.2435  dEER=+0.0197
+
+[cross-condition] enrol resting ex01-s1 -> verify auditory ex05-10  EER=0.3213
+
+================================================================================
+RESTING within->cross degradation: mean dEER=+0.0429  95%CI[+0.0183,+0.0684]  Wilcoxon p=0.00365  (n=20)
+READ-OFF: dEER>0 and p<0.05 => a genuine cross-session DEGRADATION on AEP -> 'the phenomenon
+recurs on an independent auditory dataset' is now demonstrated (not a single EER).
+================================================================================

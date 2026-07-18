@@ -1,0 +1,7 @@
+====================================================================================
+[C8] theta drift -> per-condition EER, per matcher
+  EER_PSD          n=50  std-beta=+0.268  Spearman rho=+0.253 p=0.0763
+  EER_Lightweight  n=50  std-beta=+0.487  Spearman rho=+0.468 p=0.000604
+  EER_ArcFace      n=50  std-beta=-0.182  Spearman rho=-0.199 p=0.167
+  READ-OFF: theta positive+significant across PSD/Lightweight/ArcFace => theta generalises across matchers (answers C8).
+DONE -> outputs/work3/13_matcher_theta

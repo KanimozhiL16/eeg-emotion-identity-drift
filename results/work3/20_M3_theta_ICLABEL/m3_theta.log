@@ -1,0 +1,28 @@
+nohup: ignoring input
+06 BANDS: {'theta': (4, 8), 'alpha': (8, 13), 'beta': (13, 30), 'gamma': (30, 45)}
+channels=62 fs=200 regions=['Central/Motor', 'Frontal', 'Occipital', 'Parietal', 'Temporal'] emotions=[0, 1, 2, 3, 4]
+ICLabel available: False | ASR backend: none (stage 3 skipped)
+
+[session 1] ICA fit on 6000 windows -> removed 7 comps: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(3)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(3)), ('eog', 'FPZ', np.int64(17)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(3)), ('eog', 'FP2', np.int64(2)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(3)), ('eog', 'AF3', np.int64(2)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(3)), ('eog', 'AF4', np.int64(2)), ('muscle', '', 22), ('muscle', '', 31), ('muscle', '', 33)]
+   theta computed for session 1 (5 conditions; stored/filter=all windows, ICA<= 4000)
+
+[session 2] ICA fit on 6000 windows -> removed 10 comps: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(4)), ('eog', 'FP1', np.int64(8)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(4)), ('eog', 'FPZ', np.int64(8)), ('eog', 'FPZ', np.int64(37)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(4)), ('eog', 'FP2', np.int64(2)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(4)), ('eog', 'AF3', np.int64(8)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(4)), ('eog', 'AF4', np.int64(2)), ('muscle', '', 25), ('muscle', '', 29), ('muscle', '', 30), ('muscle', '', 36), ('muscle', '', 37), ('muscle', '', 38)]
+   theta computed for session 2 (5 conditions; stored/filter=all windows, ICA<= 4000)
+
+[session 3] ICA fit on 6000 windows -> removed 11 comps: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(5)), ('eog', 'FP1', np.int64(9)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(5)), ('eog', 'FPZ', np.int64(6)), ('eog', 'FPZ', np.int64(9)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(5)), ('eog', 'FP2', np.int64(6)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(5)), ('eog', 'AF3', np.int64(9)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(5)), ('eog', 'AF4', np.int64(6)), ('eog', 'AF4', np.int64(4)), ('muscle', '', 13), ('muscle', '', 19), ('muscle', '', 26), ('muscle', '', 32), ('muscle', '', 37), ('muscle', '', 40)]
+   theta computed for session 3 (5 conditions; stored/filter=all windows, ICA<= 4000)
+
+====================================================================================
+M3 THETA ARTIFACT-ROBUSTNESS  (std-beta of theta-drift -> EER at each cleaning stage)
+====================================================================================
+  stored     std-beta=-0.232  rho=-0.286 p=0.0444  n=50  ICs_removed=0
+  filter     std-beta=-0.232  rho=-0.286 p=0.0444  n=50  ICs_removed=0  (+0% vs stored)
+  ica        std-beta=-0.186  rho=-0.288 p=0.0425  n=50  ICs_removed=28  (+20% vs stored)
+------------------------------------------------------------------------------------
+  SELF-CHECK: 'stored' std-beta should reproduce ~ +0.43 (manuscript). Observed -0.232.
+  READ-OFF (M3): if 'ica' (and 'ica_asr') std-beta stays POSITIVE and close to 'stored',
+  the theta-drift correlate SURVIVES ocular+muscle removal => it is a NEURAL effect, not an artifact.
+
+[out] outputs/work3/20_M3_theta_ICLABEL/  ->  m3_beta_summary.csv, m3_theta_robustness.csv,
+      figures/m3_beta_bar.png, figures/m3_scatter.png
+DONE.

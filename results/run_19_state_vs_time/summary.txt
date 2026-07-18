@@ -1,0 +1,26 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    EER   R-squared:                       0.702
+Model:                            OLS   Adj. R-squared:                  0.694
+Method:                 Least Squares   F-statistic:                     84.88
+Date:                Sat, 11 Jul 2026   Prob (F-statistic):           1.15e-19
+Time:                        05:24:39   Log-Likelihood:                 185.87
+No. Observations:                  75   AIC:                            -365.7
+Df Residuals:                      72   BIC:                            -358.8
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+===================================================================================
+                      coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------
+Intercept           0.1764      0.006     27.866      0.000       0.164       0.189
+session_changed     0.0603      0.005     11.876      0.000       0.050       0.070
+emotion_changed     0.0321      0.006      5.361      0.000       0.020       0.044
+==============================================================================
+Omnibus:                        4.479   Durbin-Watson:                   1.390
+Prob(Omnibus):                  0.107   Jarque-Bera (JB):                2.704
+Skew:                          -0.257   Prob(JB):                        0.259
+Kurtosis:                       2.225   Cond. No.                         5.18
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

@@ -1,0 +1,41 @@
+================================================================================
+RUN03 FIXED: DRIFT-INVARIANT + MAHALANOBIS + ADAPTIVE THRESHOLD
+================================================================================
+Project root: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+Session folder: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/data/processed/sessionwise
+Output folder: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_03_q1_improvements_fixed
+
+Detected session files:
+ - SEEDV_Q1_SAFE_SESSION1_16sub.npz
+ - SEEDV_Q1_SAFE_SESSION2_16sub.npz
+ - SEEDV_Q1_SAFE_SESSION3_16sub.npz
+Loaded SEEDV_Q1_SAFE_SESSION1_16sub.npz: X=(37600, 62, 400), y=(37600,), keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+Loaded SEEDV_Q1_SAFE_SESSION2_16sub.npz: X=(33856, 62, 400), y=(33856,), keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+Loaded SEEDV_Q1_SAFE_SESSION3_16sub.npz: X=(42688, 62, 400), y=(42688,), keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+
+Enrollment: (37600, 62, 400) (37600,)
+Test: (76544, 62, 400) (76544,)
+
+Extracting features...
+Subjects used: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+Subjects with prototypes: 16
+
+Scoring Mahalanobis verification pairs...
+
+Mahalanobis EER: 0.318168
+Mahalanobis AUC: 0.749494
+Mahalanobis EER threshold: -12.599560
+
+Computing adaptive subject thresholds...
+
+================================================================================
+RUN03 FIXED COMPLETE
+================================================================================
+                         method       EER       AUC  threshold  n_scores
+0   Drift-invariant Mahalanobis  0.318168  0.749494  -12.59956   1224704
+1  Adaptive threshold decisions  0.152452       NaN        NaN   1224704
+
+Tables saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_03_q1_improvements_fixed/tables
+Figures saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_03_q1_improvements_fixed/figures
+Manifest: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_03_q1_improvements_fixed/run03_manifest.json
+================================================================================

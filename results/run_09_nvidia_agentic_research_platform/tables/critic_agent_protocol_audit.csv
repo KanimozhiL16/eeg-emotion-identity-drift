@@ -1,0 +1,14 @@
+run,required_item,exists,file_count
+run02,tables,True,17
+run02,figures,True,32
+run03,tables,True,5
+run03,figures,True,6
+run05,tables,True,4
+run05,figures,True,9
+run05,report,False,0
+run06,tables,True,10
+run06,figures,True,12
+run06,report,True,1
+run07,tables,True,6
+run07,figures,True,7
+run07,report,True,1

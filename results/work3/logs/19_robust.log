@@ -1,0 +1,18 @@
+channels=62 fs=200 regions=['Central/Motor', 'Frontal', 'Occipital', 'Parietal', 'Temporal']
+
+merged 50 conditions (recomputed full-window vs CSV)
+====================================================================================
+(A) FAITHFULNESS: full-window theta vs CSV theta_power_drift: Pearson r=-0.119 Spearman=+0.023
+
+(B) 4-band standardized regression (n=50, R2=0.125) -- expect theta~+0.43:
+    theta  beta=-0.060 p=0.702
+    alpha  beta=+0.156 p=0.449
+    beta   beta=+0.699 p=0.0358
+    gamma  beta=-0.535 p=0.0862
+(C) single theta [amplitude] vs EER: Spearman=-0.214 p=0.135
+(C) single theta [z-scored ] vs EER: Spearman=-0.284 p=0.0454
+
+====================================================================================
+(D) [C20] per-subject full-window theta vs per-subject EER
+    n=16 Spearman=-0.276 p=0.3 | LOSO [-0.550,-0.189]
+DONE -> outputs/work3/19_robust

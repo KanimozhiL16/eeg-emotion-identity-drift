@@ -1,0 +1,38 @@
+[load] windows=114144 subjects=16 emotions=[0, 1, 2, 3, 4]
+  subj  1: emotion-decoding acc =  43.8%  (chance 20%)
+  subj  2: emotion-decoding acc =  44.3%  (chance 20%)
+  subj  3: emotion-decoding acc =  41.0%  (chance 20%)
+  subj  4: emotion-decoding acc =  36.9%  (chance 20%)
+  subj  5: emotion-decoding acc =  31.5%  (chance 20%)
+  subj  6: emotion-decoding acc =  24.1%  (chance 20%)
+  subj  7: emotion-decoding acc =  29.5%  (chance 20%)
+  subj  8: emotion-decoding acc =  39.5%  (chance 20%)
+  subj  9: emotion-decoding acc =  52.5%  (chance 20%)
+  subj 10: emotion-decoding acc =  19.4%  (chance 20%)
+  subj 11: emotion-decoding acc =  40.4%  (chance 20%)
+  subj 12: emotion-decoding acc =  21.0%  (chance 20%)
+  subj 13: emotion-decoding acc =  39.3%  (chance 20%)
+  subj 14: emotion-decoding acc =  19.4%  (chance 20%)
+  subj 15: emotion-decoding acc =  34.3%  (chance 20%)
+  subj 16: emotion-decoding acc =  35.0%  (chance 20%)
+
+=========================================================
+MEAN 5-way emotion-decoding accuracy = 34.5% (SD 9.4; range 19.4-52.5) vs chance 20%
+permutation p = 1  (n=200 label shuffles within trials)
+Row-normalised confusion (rows=true 0-4 Disgust/Fear/Sad/Neutral/Happy):
+[[0.24 0.18 0.3  0.12 0.16]
+ [0.16 0.37 0.22 0.1  0.15]
+ [0.2  0.16 0.3  0.24 0.11]
+ [0.1  0.11 0.32 0.39 0.09]
+ [0.16 0.14 0.16 0.1  0.44]]
+READ-OFF: acc >> 20% with small p => emotions are neurally separable => the elicitation
+produced measurable, distinguishable affective states (neural manipulation check for M2).
+
+[figs] saved: /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/figs/manip_check_confusion.png  and  manip_check_persubject.png
+[csv]  saved: /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/csv/manip_check_persubject.csv  and  manip_check_confusion.csv
+
+=========== M2 SUMMARY STATS (for manuscript / supplementary) ===========
+ mean acc = 34.5%  (chance 20%),  n_above_chance = 14/16
+ one-sample t(15) = 5.96, p = 2.605e-05
+ Wilcoxon W = 3.0, p = 1.526e-04;  Cohen's d = 1.49
+ permutation p = 1

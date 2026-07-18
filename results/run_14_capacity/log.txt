@@ -1,0 +1,21 @@
+==============================================================================
+STEP 5 CAPACITY ABLATION | root: /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC | device: cuda
+==============================================================================
+  tiny   params=    1392 | within=0.1217  S2=0.2180  S3=0.3044  GAP=0.1394
+  small  params=    5184 | within=0.0130  S2=0.1435  S3=0.2094  GAP=0.1634
+  base   params=   10864 | within=0.0086  S2=0.1325  S3=0.2423  GAP=0.1788
+  large  params=   22704 | within=0.0048  S2=0.1191  S3=0.2087  GAP=0.1591
+  xlarge params=   53584 | within=0.0070  S2=0.0995  S3=0.2125  GAP=0.1490
+
+==============================================================================
+capacity  params  EER_within  EER_S2  EER_S3  within_to_cross_gap
+    tiny    1392      0.1217  0.2180  0.3044               0.1394
+   small    5184      0.0130  0.1435  0.2094               0.1634
+    base   10864      0.0086  0.1325  0.2423               0.1788
+   large   22704      0.0048  0.1191  0.2087               0.1591
+  xlarge   53584      0.0070  0.0995  0.2125               0.1490
+
+INTERPRETATION: if EER_within stays low while S2/S3 and GAP do NOT shrink as
+params grow, the cross-session limit is DRIFT, not capacity (rebuts Ozdenizci 2019).
+SAVED: outputs/run_14_capacity/capacity_ablation.csv
+==============================================================================

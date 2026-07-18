@@ -1,0 +1,7 @@
+Device: cuda
+Output folder: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_03_q1_improvements
+Traceback (most recent call last):
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/03_q1_drift_invariant_adaptive_mahalanobis.py", line 63, in <module>
+    session_files = sorted(SESSION_DIR.glob("*.npz"))
+                           ^^^^^^^^^^^
+NameError: name 'SESSION_DIR' is not defined

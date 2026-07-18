@@ -1,0 +1,2 @@
+anchor_table,drift_col,n,breakpoint,ci_lo,ci_hi,gain_pct,perm_p,mean,slope_below,slope_above
+outputs/run_01_baseline/tables/drift_vs_eer_validation_table.csv,drift_index,25,0.11003305246955468,0.10987898156011294,0.1110806133916891,59.97717990599529,0.00039996000399960006,0.11740222424268719,2.443463701164918,-0.533542917234382

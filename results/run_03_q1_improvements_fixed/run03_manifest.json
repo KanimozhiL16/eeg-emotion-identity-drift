@@ -1,0 +1,35 @@
+{
+  "root": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC",
+  "session_dir": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/data/processed/sessionwise",
+  "output_dir": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_03_q1_improvements_fixed",
+  "session_files": [
+    "SEEDV_Q1_SAFE_SESSION1_16sub.npz",
+    "SEEDV_Q1_SAFE_SESSION2_16sub.npz",
+    "SEEDV_Q1_SAFE_SESSION3_16sub.npz"
+  ],
+  "label_key_used": "y_subject",
+  "feature": "mean+std+logpower with enrollment z-normalization and L2 normalization",
+  "scoring": "negative Mahalanobis distance with subject-specific diagonal covariance",
+  "global_EER": 0.31816776407469344,
+  "global_AUC": 0.7494939266434155,
+  "global_threshold": -12.599559783935547,
+  "adaptive_balanced_error": 0.15245193940739965,
+  "n_subjects": 16,
+  "n_genuine_scores": 76544,
+  "n_impostor_scores": 1148160,
+  "tables": [
+    "run03_adaptive_threshold_decisions.csv",
+    "run03_subject_adaptive_thresholds.csv",
+    "run03_mahalanobis_score_level_genuine_impostor.csv",
+    "run03_emotionwise_mahalanobis_results.csv",
+    "run03_improvement_summary.csv"
+  ],
+  "figures": [
+    "run03_improvement_eer_comparison.png",
+    "run03_subject_adaptive_threshold_distribution.png",
+    "run03_mahalanobis_roc.png",
+    "run03_mahalanobis_score_distribution.png",
+    "run03_threshold_tradeoff.png",
+    "run03_mahalanobis_det.png"
+  ]
+}

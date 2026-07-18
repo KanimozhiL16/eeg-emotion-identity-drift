@@ -1,0 +1,49 @@
+==============================================================================
+STEP 2 STATISTICS  |  project root: /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+==============================================================================
+
+--- H2: session degradation across S1->S2->S3 ---
+  using outputs/run_07_seedv_session_drift_subject_adaptation/tables/score_level_session_verification_scores.csv
+  columns: ['y_true', 'score', 'probe_subject', 'claimed_subject', 'comparison', 'probe_session']
+  per-subject EER matrix shape: (16, 3) sessions: [1, 2, 3]
+    session 1: mean EER=0.1309  95% CI [0.0944, 0.1674]
+    session 2: mean EER=0.1693  95% CI [0.1252, 0.2135]
+    session 3: mean EER=0.2464  95% CI [0.1645, 0.3282]
+  [H2] Friedman (session EER): stat=11.38, p=0.00339  KendallW=0.355, n=16
+
+--- H3: spectral-band correlates of EER (FDR) + regression ---
+  using outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv
+  columns: ['enroll_session', 'test_session', 'enroll_emotion', 'test_emotion', 'transition', 'theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift', 'total_psd_drift', 'variant', 'seed', 'EER', 'AUC']
+  [H3] Pearson theta_power_drift vs EER: stat=0.317, p=3.05e-07  FDR-q=1.53e-06*
+  [H3] Pearson alpha_power_drift vs EER: stat=-0.1473, p=0.0198  FDR-q=0.0496*
+  [H3] Pearson total_psd_drift vs EER: stat=0.1117, p=0.0779  FDR-q=0.13
+  [H3] Pearson gamma_power_drift vs EER: stat=0.077, p=0.225  FDR-q=0.281
+  [H3] Pearson beta_power_drift vs EER: stat=0.0379, p=0.551  FDR-q=0.551
+  [H3] standardized regression R^2: stat=0.152, p=n/a  betas={'theta_power_drift': np.float64(0.0032), 'alpha_power_drift': np.float64(-0.002), 'beta_power_drift': np.float64(-0.0014), 'gamma_power_drift': np.float64(0.0005), 'total_psd_drift': np.float64(0.0002)}
+
+--- H4: two-phase (change-point) regression on drift-vs-EER ---
+  using outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv
+  [H4] two-phase vs single-line (F): stat=11.57, p=1.57e-05  changepoint drift~=0.001346, SSE 0.0168->0.0154
+
+--- H5: subject adaptation mitigation (paired) ---
+  using outputs/run_07_seedv_session_drift_subject_adaptation/tables/subject_adaptation_results.csv
+  columns: ['probe_session', 'adaptation_fraction', 'EER', 'AUC', 'threshold', 'adaptive_balanced_error', 'n_scores']
+  MISSING paired cols: baseline=None, adapted=None  (try adaptation_improvement_summary.csv)
+
+--- H1: emotion-wise EER spread ---
+  [H1] emotion EER mean/CI: stat=0.3171, p=n/a  range [0.3113,0.3268], 95%CI[0.3087,0.3255]
+
+==============================================================================
+SAVED: outputs/run_11_statistics/statistics_summary.csv
+hypothesis                             test  statistic      p_value                                                                                                                                                                                                            detail
+        H2           Friedman (session EER)  11.375000 3.388053e-03                                                                                                                                                                                              KendallW=0.355, n=16
+        H3 Pearson theta_power_drift vs EER   0.317032 3.050632e-07                                                                                                                                                                                                   FDR-q=1.53e-06*
+        H3 Pearson alpha_power_drift vs EER  -0.147268 1.982926e-02                                                                                                                                                                                                     FDR-q=0.0496*
+        H3   Pearson total_psd_drift vs EER   0.111722 7.787421e-02                                                                                                                                                                                                        FDR-q=0.13
+        H3 Pearson gamma_power_drift vs EER   0.076998 2.250721e-01                                                                                                                                                                                                       FDR-q=0.281
+        H3  Pearson beta_power_drift vs EER   0.037896 5.509042e-01                                                                                                                                                                                                       FDR-q=0.551
+        H3      standardized regression R^2   0.151987          NaN betas={'theta_power_drift': np.float64(0.0032), 'alpha_power_drift': np.float64(-0.002), 'beta_power_drift': np.float64(-0.0014), 'gamma_power_drift': np.float64(0.0005), 'total_psd_drift': np.float64(0.0002)}
+        H4     two-phase vs single-line (F)  11.574757 1.569659e-05                                                                                                                                                                   changepoint drift~=0.001346, SSE 0.0168->0.0154
+        H1              emotion EER mean/CI   0.317081          NaN                                                                                                                                                                       range [0.3113,0.3268], 95%CI[0.3087,0.3255]
+==============================================================================
+Paste this console output back so any MISSING-column blocks can be tuned.

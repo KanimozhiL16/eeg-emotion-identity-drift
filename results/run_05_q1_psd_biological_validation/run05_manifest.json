@@ -1,0 +1,22 @@
+{
+  "output_folder": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_05_q1_psd_biological_validation",
+  "figures": [
+    "fig01_psd_bandpower_by_emotion.png",
+    "fig02_alpha_band_drift_heatmap.png",
+    "fig02_beta_band_drift_heatmap.png",
+    "fig02_gamma_band_drift_heatmap.png",
+    "fig02_theta_band_drift_heatmap.png",
+    "fig03_total_psd_drift_heatmap.png",
+    "fig04_psd_drift_band_boxplot.png",
+    "fig06_psd_drift_vs_eer.png",
+    "fig07_band_specific_correlation_with_eer.png"
+  ],
+  "tables": [
+    "merged_psd_identity_drift_validation.csv",
+    "psd_band_drift_cross_emotion.csv",
+    "psd_bandpower_by_session_emotion.csv",
+    "psd_drift_correlation_statistics.csv"
+  ],
+  "report": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_05_q1_psd_biological_validation/q1_biological_drift_validation_report.md",
+  "novelty_sentence": "Existing EEG biometric studies primarily report aggregate verification performance, whereas this work explicitly models, quantifies, and biologically validates cognitive-state-induced identity drift using both embedding-level and spectral-band evidence."
+}

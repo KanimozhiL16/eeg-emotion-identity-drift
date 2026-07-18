@@ -1,0 +1,31 @@
+==========================================================================================
+RUN06 Q1 LEVEL-UP: REGION PSD + FDR + REGRESSION + TRAJECTORY
+==========================================================================================
+Output folder: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_06_q1_levelup_biological_embedding_analysis
+Session files:
+ - SEEDV_Q1_SAFE_SESSION1_16sub.npz
+ - SEEDV_Q1_SAFE_SESSION2_16sub.npz
+ - SEEDV_Q1_SAFE_SESSION3_16sub.npz
+Processing SEEDV_Q1_SAFE_SESSION1_16sub.npz: X=(37600, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+Processing SEEDV_Q1_SAFE_SESSION2_16sub.npz: X=(33856, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+Processing SEEDV_Q1_SAFE_SESSION3_16sub.npz: X=(42688, 62, 400), fs=200, keys=['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+Using identity table: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv
+
+✅ RUN06 COMPLETE
+Figures saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_06_q1_levelup_biological_embedding_analysis/figures
+Tables saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_06_q1_levelup_biological_embedding_analysis/tables
+Report saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_06_q1_levelup_biological_embedding_analysis/report/run06_q1_levelup_report.md
+
+Generated figures:
+ - fig01_regionwise_psd_bandpower.png
+ - fig02_global_alpha_drift_heatmap.png
+ - fig02_global_beta_drift_heatmap.png
+ - fig02_global_gamma_drift_heatmap.png
+ - fig02_global_theta_drift_heatmap.png
+ - fig03_global_total_psd_drift_heatmap.png
+ - fig04_regionwise_total_psd_drift.png
+ - fig05_total_psd_drift_vs_eer.png
+ - fig07_region_band_correlation_with_eer.png
+ - fig08_regression_band_contributions_to_eer.png
+ - fig09_spectral_embedding_pca_trajectories.png
+ - fig10_worst_cross_emotion_transitions_by_eer.png

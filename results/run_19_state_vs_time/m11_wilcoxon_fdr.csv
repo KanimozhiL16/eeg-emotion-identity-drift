@@ -1,0 +1,4 @@
+effect,desc,n,dEER_mean,wilcoxon_W,p_raw,rank,q_BH,p_Holm,sig_FDR_0.05
+state,"same session, different emotion  (cognitive-state drift)",16,0.04736745213590647,0.0,3.0517578125e-05,1,9.1552734375e-05,9.1552734375e-05,True
+both,"different session, different emotion",16,0.0999213355663008,2.0,9.1552734375e-05,2,0.0001373291015625,0.00018310546875,True
+time,"different session, same emotion   (elapsed-time drift)",16,0.07679106107462291,9.0,0.001007080078125,3,0.001007080078125,0.001007080078125,True

@@ -1,0 +1,5 @@
+figure_file,purpose
+fig_score_distribution_genuine_vs_impostor.png,Shows genuine/impostor separability and EER threshold.
+fig_threshold_error_tradeoff.png,Shows decision threshold behavior through FPR/FNR trade-off.
+fig_real_eer_across_drift_groups.png,"Shows whether verification error changes across low, medium, and high drift."
+fig_final_real_eer_vs_drift.png,Shows relationship between identity drift and verification degradation.

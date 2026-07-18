@@ -1,0 +1,3 @@
+method,EER,AUC,threshold,n_scores
+Drift-invariant Mahalanobis,0.31816776407469344,0.7494939266434155,-12.599559783935547,1224704
+Adaptive threshold decisions,0.15245193940739965,,,1224704

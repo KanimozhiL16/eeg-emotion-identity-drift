@@ -1,0 +1,30 @@
+================================================================================
+RUN10: AEP CROSS-DATASET VALIDATION
+================================================================================
+X: (22201, 4, 512)
+Subjects: [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+n_subjects: 20
+
+Extracting features...
+Feature shape: (22201, 36)
+
+Train: (11099, 36)
+Test: (11102, 36)
+
+Created prototypes: 20
+
+AUC: 0.7314102604953744
+EER: 0.3368003868435275
+
+================================================================================
+RUN10 COMPLETE
+================================================================================
+
+Outputs:
+Figures: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_10_aep_cross_dataset_validation/figures
+Tables: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_10_aep_cross_dataset_validation/tables
+Report: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_10_aep_cross_dataset_validation/report/run10_aep_report.md
+
+Final Metrics
+AUC = 0.7314102604953744
+EER = 0.3368003868435275

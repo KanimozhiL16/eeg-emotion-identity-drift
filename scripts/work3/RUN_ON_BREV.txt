@@ -1,0 +1,31 @@
+WORK3 EXPERIMENT PACK — how to run on Brev
+==========================================
+Host: brev-x1v47hbeh   ROOT: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+
+1) Upload this zip into the P4 project root, then unzip so scripts land in scripts/work3/ :
+     cd /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+     unzip -o P4_work3_experiments.zip -d scripts/          # -> scripts/work3/*.py
+     source p4_seedv_env/bin/activate
+     mkdir -p outputs/work3/logs
+     pip install -q statsmodels scikit-learn transformers --break-system-packages
+
+2) VERIFY FIRST (must show 0 FAIL in the SUMMARY):
+     python -u scripts/work3/00_verify_setup.py 2>&1 | tee outputs/work3/logs/00_verify.log
+   -> paste the SUMMARY back before continuing.
+
+3) Run everything (verify + all 7 experiments), each logged:
+     bash scripts/work3/run_all.sh
+   OR run individually:
+     python -u scripts/work3/10_csv_mechanism_checks.py        2>&1 | tee outputs/work3/logs/10_csv.log
+     python -u scripts/work3/11_band_recompute_from_windows.py 2>&1 | tee outputs/work3/logs/11_band.log
+     python -u scripts/work3/12_subject_theta_vs_eer.py        2>&1 | tee outputs/work3/logs/12_subject.log
+     python -u scripts/work3/13_matcher_theta_consistency.py   2>&1 | tee outputs/work3/logs/13_matcher.log
+     python -u scripts/work3/14_theta_aware_mitigation.py      2>&1 | tee outputs/work3/logs/14_mitig.log
+     python -u scripts/work3/15_reve_linear_probe.py           2>&1 | tee outputs/work3/logs/15_reve.log
+     python -u scripts/work3/16_aep_spectral_theta.py          2>&1 | tee outputs/work3/logs/16_aep.log
+
+4) Send back: outputs/work3/logs/*.log  and  outputs/work3/*/*.csv
+   (or just paste the console output). Verified numbers then go into the paper.
+
+Note: run_all.sh expects the scripts at scripts/work3/ (default). If you put them elsewhere,
+edit the SD= line at the top of run_all.sh.

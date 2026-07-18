@@ -1,0 +1,11 @@
+sessions: [1, 2, 3] | emotion key: y_emotion
+per-condition drift rows: 50 per preprocessing
+
+====================================================================================
+[C12] theta regression: z-scored vs amplitude-preserving PSD
+  zscored (paper)        n=50 R2=0.13  theta beta=+0.042 p=0.824 | theta=+0.04 alpha=+0.17 beta=+0.55 gamma=-0.39
+  amplitude-preserving   n=50 R2=0.1  theta beta=-0.028 p=0.871 | theta=-0.03 alpha=+0.06 beta=+0.51 gamma=-0.43
+
+  READ-OFF (C12): if theta stays the top POSITIVE band with p<0.05 on amplitude-preserving PSD,
+  keep 'band-power drift'. If it weakens/flips, rename to 'normalised spectral redistribution'.
+DONE -> outputs/work3/11_band_recompute

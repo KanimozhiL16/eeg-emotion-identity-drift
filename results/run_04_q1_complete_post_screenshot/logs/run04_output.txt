@@ -1,0 +1,54 @@
+================================================================================
+SEED-V Q1 COMPLETE POST-SCREENSHOT ANALYSIS SUITE
+================================================================================
+Root: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC
+Previous run folder: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_02_q1_validation
+New output folder: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot
+Started: 2026-05-05T15:24:15.552403
+
+Searching previous tables in: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_02_q1_validation/tables
+main_df: loaded shape=(15, 11), columns=['seed', 'variant', 'eer', 'auc', 'CDT', 'linear_mse', 'piecewise_mse', 'improvement_ratio', 'split_index', 'transition_drift', 'permutation_p']
+cross_df: loaded shape=(375, 7), columns=['seed', 'variant', 'enroll_emotion', 'test_emotion', 'eer', 'auc', 'mean_drift']
+drift_df: loaded shape=(6000, 7), columns=['seed', 'variant', 'subject', 'enroll_emotion', 'test_emotion', 'cross_similarity', 'drift_index']
+score_df: loaded shape=(683008, 6), columns=['sample_index', 'true_subject', 'claimed_subject', 'emotion', 'score', 'y_true']
+Best/proposed variant: arcface_supcon_cnn
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig01_multiseed_eer_boxplot.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig02_cross_emotion_eer_heatmap.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig03_cross_emotion_identity_drift_heatmap.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig04_eer_vs_drift_with_cdt_ci.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig05_phase_transition_piecewise_model.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig06_eer_across_drift_severity_groups.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig07_worst_case_cross_emotion_transitions.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig08_subjectwise_drift_boxplot.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig09_eer_distribution_cross_emotion.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig10_score_level_roc_curve.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig11_score_level_det_curve.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig12_score_distribution_genuine_vs_impostor.png
+Saved figure: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures/fig13_threshold_error_tradeoff.png
+
+Sessionwise files detected for Run03 improvement: ['SEEDV_Q1_SAFE_SESSION1_16sub.npz', 'SEEDV_Q1_SAFE_SESSION2_16sub.npz', 'SEEDV_Q1_SAFE_SESSION3_16sub.npz', 'session1.npz', 'session2.npz', 'session3.npz']
+Skipping Run03 improvement: could not identify X/y keys in SEEDV_Q1_SAFE_SESSION1_16sub.npz ['X', 'y_subject', 'y_session', 'y_trial', 'y_emotion', 'source_file', 'fs', 'ch_names', 'config']
+
+================================================================================
+FINAL Q1 POST-SCREENSHOT SUITE COMPLETE
+================================================================================
+Figures saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/figures
+Tables saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/tables
+Run03 reproduction saved to: /home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot/run03_improvement_reproduction
+Novelty sentence:
+Existing EEG biometric studies primarily report aggregate verification performance, whereas this work explicitly models, quantifies, and statistically validates cognitive-state-induced identity drift.
+Generated figures:
+ - fig01_multiseed_eer_boxplot.png : Shows robustness across seeds and compares proposed model against baselines.
+ - fig02_cross_emotion_eer_heatmap.png : Identifies which cognitive-state transitions are hardest for verification.
+ - fig03_cross_emotion_identity_drift_heatmap.png : Shows representation-level cognitive drift independent of final aggregate EER.
+ - fig04_eer_vs_drift_with_cdt_ci.png : Main Q1 figure linking identity drift to verification degradation with CDT confidence band.
+ - fig05_phase_transition_piecewise_model.png : Mathematically supports phase-transition behavior under cognitive drift.
+ - fig06_eer_across_drift_severity_groups.png : Ablation showing when cognitive drift degrades verification.
+ - fig07_worst_case_cross_emotion_transitions.png : Highlights specific cognitive-state pairs causing highest biometric error.
+ - fig08_subjectwise_drift_boxplot.png : Shows inter-subject variability in representation stability.
+ - fig09_eer_distribution_cross_emotion.png : Shows overall spread of cognitive-state verification difficulty.
+ - fig10_score_level_roc_curve.png : Score-level ROC validates verification behavior using genuine/impostor decisions.
+ - fig11_score_level_det_curve.png : DET curve provides biometric-system operating trade-off.
+ - fig12_score_distribution_genuine_vs_impostor.png : Shows genuine/impostor separability and threshold placement.
+ - fig13_threshold_error_tradeoff.png : Shows how threshold choice controls FPR/FNR trade-off.
+================================================================================

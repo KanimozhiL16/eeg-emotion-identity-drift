@@ -1,0 +1,4 @@
+protocol,REVE_frozen_cosine,REVE_linear_probe
+within,0.2514,0.0001
+S1->S2,0.313,0.1006
+S1->S3,0.3078,0.1085

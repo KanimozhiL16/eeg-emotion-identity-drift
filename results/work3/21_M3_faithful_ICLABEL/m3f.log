@@ -1,0 +1,25 @@
+nohup: ignoring input
+06 BANDS: {'theta': (4, 8), 'alpha': (8, 13), 'beta': (13, 30), 'gamma': (30, 45)} | REGION_ORDER: ['Frontal', 'Central/Motor', 'Temporal', 'Parietal', 'Occipital', 'Other']
+session files: ['SEEDV_Q1_SAFE_SESSION1_16sub.npz', 'SEEDV_Q1_SAFE_SESSION2_16sub.npz', 'SEEDV_Q1_SAFE_SESSION3_16sub.npz']
+channels=62 fs=200 regions=['Frontal', 'Central/Motor', 'Temporal', 'Parietal', 'Occipital'] emotions=[0, 1, 2, 3, 4]
+ICLabel available: True | frontal proxies: ['FP1', 'FPZ', 'FP2', 'AF3', 'AF4']
+Traceback (most recent call last):
+  File "/lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/21_M3_theta_robustness_faithful.py", line 157, in <module>
+    ica, ictypes, nrm = fit_session_ica(session_fit_windows(sidx))
+                        ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/21_M3_theta_robustness_faithful.py", line 95, in fit_session_ica
+    lab = label_components(raw_hp, ica, method="iclabel")
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/mne_icalabel/label_components.py", line 56, in label_components
+    labels_pred_proba = ICALABEL_METHODS[method](inst, ica)  # type: ignore
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/mne_icalabel/iclabel/label_components.py", line 63, in iclabel_label_components
+    features = get_iclabel_features(inst, ica)
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/mne_icalabel/iclabel/features.py", line 92, in get_iclabel_features
+    topo = _eeg_topoplot(inst, icawinv, ica.ch_names)
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/mne_icalabel/iclabel/features.py", line 190, in _eeg_topoplot
+    rd, th = _mne_to_eeglab_locs(inst, picks)
+             ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/mne_icalabel/iclabel/_utils.py", line 50, in _mne_to_eeglab_locs
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Channel position for ['CB1', 'CB2'] is missing. Please check the montage set, the channel names, and ensure that every channel has a position.

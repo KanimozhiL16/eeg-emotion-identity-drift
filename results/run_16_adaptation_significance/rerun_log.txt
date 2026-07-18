@@ -1,0 +1,15 @@
+==============================================================================
+STEP 2d  adaptation significance (reusing run_07 functions)
+==============================================================================
+  session 3: F=(14400, 434)
+  session 2: F=(14400, 434)
+  session 1: F=(14400, 434)
+
+  session : baseline -> adapted | best_frac | Wilcoxon p
+  S2: 0.2164 -> 0.1969 | frac=0.2 (-9.0%) | W=17.0, p=0.0063
+  S3: 0.2369 -> 0.2111 | frac=0.2 (-10.9%) | W=3.0, p=0.0002
+==============================================================================
+  [sanity] baseline S2/S3 should be ≈0.182/0.251 (run_07).
+VERDICT: adaptive re-enrollment significant (p<0.05) at sessions: [2, 3]
+PASS — saved -> outputs/run_16_adaptation_significance/
+==============================================================================

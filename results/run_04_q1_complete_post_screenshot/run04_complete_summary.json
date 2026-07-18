@@ -1,0 +1,62 @@
+{
+  "root": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC",
+  "previous_run_used": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_02_q1_validation",
+  "new_output_folder": "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/run_04_q1_complete_post_screenshot",
+  "best_variant": "arcface_supcon_cnn",
+  "figures_generated": [
+    {
+      "figure_file": "fig01_multiseed_eer_boxplot.png",
+      "purpose": "Shows robustness across seeds and compares proposed model against baselines."
+    },
+    {
+      "figure_file": "fig02_cross_emotion_eer_heatmap.png",
+      "purpose": "Identifies which cognitive-state transitions are hardest for verification."
+    },
+    {
+      "figure_file": "fig03_cross_emotion_identity_drift_heatmap.png",
+      "purpose": "Shows representation-level cognitive drift independent of final aggregate EER."
+    },
+    {
+      "figure_file": "fig04_eer_vs_drift_with_cdt_ci.png",
+      "purpose": "Main Q1 figure linking identity drift to verification degradation with CDT confidence band."
+    },
+    {
+      "figure_file": "fig05_phase_transition_piecewise_model.png",
+      "purpose": "Mathematically supports phase-transition behavior under cognitive drift."
+    },
+    {
+      "figure_file": "fig06_eer_across_drift_severity_groups.png",
+      "purpose": "Ablation showing when cognitive drift degrades verification."
+    },
+    {
+      "figure_file": "fig07_worst_case_cross_emotion_transitions.png",
+      "purpose": "Highlights specific cognitive-state pairs causing highest biometric error."
+    },
+    {
+      "figure_file": "fig08_subjectwise_drift_boxplot.png",
+      "purpose": "Shows inter-subject variability in representation stability."
+    },
+    {
+      "figure_file": "fig09_eer_distribution_cross_emotion.png",
+      "purpose": "Shows overall spread of cognitive-state verification difficulty."
+    },
+    {
+      "figure_file": "fig10_score_level_roc_curve.png",
+      "purpose": "Score-level ROC validates verification behavior using genuine/impostor decisions."
+    },
+    {
+      "figure_file": "fig11_score_level_det_curve.png",
+      "purpose": "DET curve provides biometric-system operating trade-off."
+    },
+    {
+      "figure_file": "fig12_score_distribution_genuine_vs_impostor.png",
+      "purpose": "Shows genuine/impostor separability and threshold placement."
+    },
+    {
+      "figure_file": "fig13_threshold_error_tradeoff.png",
+      "purpose": "Shows how threshold choice controls FPR/FNR trade-off."
+    }
+  ],
+  "novelty_sentence": "Existing EEG biometric studies primarily report aggregate verification performance, whereas this work explicitly models, quantifies, and statistically validates cognitive-state-induced identity drift.",
+  "finished": "2026-05-05T15:24:35.549480"
+}

@@ -1,0 +1,22 @@
+[load] windows=114144 subjects=16
+  subj  1: acc =  43.8%
+  subj  2: acc =  44.3%
+  subj  3: acc =  41.0%
+  subj  4: acc =  36.9%
+  subj  5: acc =  31.5%
+  subj  6: acc =  24.1%
+  subj  7: acc =  29.5%
+  subj  8: acc =  39.5%
+  subj  9: acc =  52.5%
+  subj 10: acc =  19.4%
+  subj 11: acc =  40.4%
+  subj 12: acc =  21.0%
+  subj 13: acc =  39.3%
+  subj 14: acc =  19.4%
+  subj 15: acc =  34.3%
+  subj 16: acc =  35.0%
+
+MEAN 34.5% (SD 9.7); n_above=14/16; t(15)=5.96 p=2.605e-05; Wilcoxon W=3.0 p=1.526e-04; d=1.49
+[figs] saved -> /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/figs/manip_check_confusion.png , manip_check_persubject.png
+[csv]  saved -> /lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/outputs/csv/manip_check_persubject.csv , manip_check_confusion.csv
+DONE (permutation-null skipped by design; significance from t-test above).

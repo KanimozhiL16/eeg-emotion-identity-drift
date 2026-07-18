@@ -1,0 +1,25 @@
+====================================================================================
+[C15] theta-aware (unsupervised) normalisation vs baseline
+ subject  baseline_EER  theta_norm_EER   delta
+       1        0.2236          0.2266  0.0030
+       2        0.3048          0.3070  0.0021
+       3        0.3154          0.3123 -0.0031
+       4        0.1045          0.1050  0.0006
+       5        0.1694          0.1657 -0.0037
+       6        0.5006          0.5086  0.0080
+       7        0.5411          0.5350 -0.0061
+       8        0.0813          0.0812 -0.0001
+       9        0.1367          0.1365 -0.0002
+      10        0.3056          0.3049 -0.0008
+      11        0.2943          0.2932 -0.0011
+      12        0.0064          0.0069  0.0005
+      13        0.2998          0.3008  0.0011
+      14        0.1007          0.0998 -0.0009
+      15        0.1827          0.1881  0.0054
+      16        0.1676          0.1682  0.0006
+
+  mean baseline=0.2334  theta-norm=0.2337  mean Δ=+0.0003  Wilcoxon p=0.9
+  reference (paper, supervised re-enrolment): S2 -9.0% p=0.006 ; S3 -10.9% p=2e-4
+  READ-OFF: if theta-norm lowers EER (Δ<0, p<0.05), the mitigation is connected to the theta mechanism (answers C15).
+  If it does not help, report honestly: theta is a correlate; unsupervised theta-normalisation is insufficient, re-enrolment remains the practical fix.
+DONE -> outputs/work3/14_theta_mitigation

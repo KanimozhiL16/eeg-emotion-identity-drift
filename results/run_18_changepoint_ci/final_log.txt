@@ -1,0 +1,27 @@
+====================================================================================================
+A)  ANCHOR: identity-drift index  (Fig 5 metric; independent conditions)
+====================================================================================================
+table : outputs/run_01_baseline/tables/drift_vs_eer_validation_table.csv
+cols  : ['enroll_emotion', 'test_emotion', 'EER', 'AUC', 'genuine_scores', 'impostor_scores', 'drift_index']
+using : x=drift_index  y=EER   rows=25   has_seed=False
+       drift_index        EER
+count    25.000000  25.000000
+mean      0.117402   0.074073
+min       0.104594   0.067114
+max       0.135696   0.085059
+
+>>> breakpoint = 0.1100   95% CI [0.1099, 0.1111]   n=25
+>>> fit gain  = 60.0% lower RSS than a single line   (RSS ratio 2.499)
+>>> slopes    : below bp = 2.443  ->  above bp = -0.534   (EER rises -0.2x faster after)
+>>> permutation p (10000) = 0.00040
+
+====================================================================================================
+B)  RIGOR CHECK: naive per-seed  vs  seed-collapsed (pseudoreplication control)
+====================================================================================================
+table : outputs/run_02_q1_validation/tables/cross_emotion_results_all_seeds.csv  seed= seed  drift= mean_drift  group= ['enroll_emotion', 'test_emotion']
+ naive per-seed        : n=375  bp=0.125  gain= 5.6%  p=0.00020
+ seed-collapsed (indep): n= 25  bp=0.169  gain=13.3%  p=0.23968
+
+SAVED figure -> outputs/run_18_changepoint_ci/Fig03b_change_point.png
+SAVED stats  -> outputs/run_18_changepoint_ci/changepoint_final.csv
+====================================================================================================

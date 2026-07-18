@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated paper."
+title: "Emotion-Associated and Cross-Session Identity Drift in EEG Biometrics: Measurement, a Theta-Band Correlate, and Lightweight Mitigation"
+authors:
+  - family-names: "L."
+    given-names: "Kanimozhi"
+    affiliation: "Centre for Neuroinformatics, VIT Chennai"
+    email: "kanimozhi.l2024@vitstudent.ac.in"
+  - family-names: "Shridevi"
+    given-names: "S."
+    affiliation: "Centre for Neuroinformatics, VIT Chennai"
+year: 2026
+preferred-citation:
+  type: article
+  title: "Emotion-Associated and Cross-Session Identity Drift in EEG Biometrics: Measurement, a Theta-Band Correlate, and Lightweight Mitigation"
+  authors:
+    - family-names: "L."
+      given-names: "Kanimozhi"
+    - family-names: "Shridevi"
+      given-names: "S."
+  journal: "IEEE Transactions on Affective Computing"
+  year: 2026
+  notes: "Under review"

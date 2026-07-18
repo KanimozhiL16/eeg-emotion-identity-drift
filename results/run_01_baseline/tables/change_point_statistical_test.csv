@@ -1,0 +1,2 @@
+linear_mse,piecewise_mse,mse_improvement,improvement_ratio,best_split_index,phase_transition_drift,cdt_bootstrap_mean,permutation_p_value,n_permutations
+3.696953412298248e-05,8.585567049331557e-06,2.8383967073650925e-05,4.306009598499473,10,0.11527883633971214,0.10997749549423168,0.0001999600079984003,5000

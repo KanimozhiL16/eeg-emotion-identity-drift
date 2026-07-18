@@ -1,0 +1,28 @@
+06 BANDS: {'theta': (4, 8), 'alpha': (8, 13), 'beta': (13, 30), 'gamma': (30, 45)} | REGION_ORDER: ['Frontal', 'Central/Motor', 'Temporal', 'Parietal', 'Occipital', 'Other']
+channels=62 fs=200 | regions found: ['Central/Motor', 'Frontal', 'Occipital', 'Parietal', 'Temporal']
+[C12 evidence] stored window per-ch std avg=0.875 (1.0 => unit z-scored; <1 => amplitude-preserving)
+
+====================================================================================
+[C12] pipeline-faithful theta drift vs ArcFace EER: amplitude vs z-scored
+  amplitude (paper)    n=50  theta std-beta=-0.232  Spearman rho=-0.286 p=0.0444
+  z-scored windows     n=50  theta std-beta=-0.261  Spearman rho=-0.317 p=0.0248
+  SELF-CHECK: 'amplitude (paper)' theta std-beta should be ~ +0.43 (matches CSV Table 3).
+  READ-OFF (C12): if z-scored theta beta is similar, per-window z-scoring would not change the story;
+  and since the paper already uses amplitude-preserving power, C12 is a Methods clarification.
+
+====================================================================================
+[C20] per-subject pipeline-faithful theta drift vs per-subject cross-session EER
+  n=16  Spearman rho=-0.238 p=0.374 | Kendall tau=-0.200 p=0.306
+  LOSO Spearman range [-0.504,-0.146]
+  READ-OFF: POSITIVE significant => theta drift tracks identity EER at subject level (supports paper).
+            NEGATIVE/again null => the theta effect is between-condition only, NOT a per-subject identity signal.
+
+====================================================================================
+[C8] pipeline theta_power_drift vs per-matcher EER
+  merged 50 conditions with pipeline theta_power_drift
+    EER_PSD          n=50  Spearman(theta_pipeline, EER)=+0.085 p=0.558
+    EER_Lightweight  n=50  Spearman(theta_pipeline, EER)=+0.139 p=0.336
+    EER_ArcFace      n=50  Spearman(theta_pipeline, EER)=+0.372 p=0.00787
+  READ-OFF: consistent positive across PSD/Lightweight/ArcFace => pipeline theta generalises across matchers.
+
+DONE -> outputs/work3/18_faithful_theta

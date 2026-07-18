@@ -1,0 +1,12 @@
+merged 50 conditions
+faithfulness (swap-fixed) r=+0.683
+
+[C12] 4-band regression (my full-window drift) vs ArcFace EER:
+  amplitude  theta beta=+0.795
+  z-scored   theta beta=+0.914
+
+[C8] pipeline theta_csv vs per-matcher EER (swap-fixed):
+  EER_PSD          n=50 Spearman=+0.182 p=0.206
+  EER_Lightweight  n=50 Spearman=+0.275 p=0.0531
+  EER_ArcFace      n=50 Spearman=+0.372 p=0.00787
+DONE

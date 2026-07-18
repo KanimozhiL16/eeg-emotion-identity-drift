@@ -1,0 +1,8 @@
+AEP channels: ['T7', 'F8', 'Cz', 'P4'] | T7 at index 0
+====================================================================================
+[C14] AEP theta drift -> cross-session EER (n=20 subjects)
+  theta_drift_4ch    Spearman rho=+0.150 p=0.527
+  theta_drift_T7     Spearman rho=+0.287 p=0.22
+  READ-OFF: positive theta (esp. T7) vs EER supports the temporal-theta account beyond SEED-V.
+  If null, keep 'partial replication of degradation'.
+DONE -> outputs/work3/16_aep_theta

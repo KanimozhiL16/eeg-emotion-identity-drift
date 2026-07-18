@@ -1,0 +1,3 @@
+proposed_variant,baseline_variant,baseline_mean_EER,proposed_mean_EER,absolute_EER_reduction,relative_EER_reduction_percent,cohens_d_baseline_minus_proposed,paired_t_p,wilcoxon_p
+arcface_supcon_cnn,arcface_cnn,0.0799765742128935,0.07466173163418285,0.005314842578710649,6.645499173999142,1.5975332311472585,0.04127804997223289,0.0625
+arcface_supcon_cnn,softmax_cnn,0.08327898550724636,0.07466173163418285,0.008617253873063502,10.347452986580496,2.5202182408783167,0.009539751565000603,0.0625

@@ -1,0 +1,189 @@
+
+================ outputs/work3/logs/17_index.log ================
+====================================================================================
+source: outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv | seed-collapsed conditions n=25
+paper identity-drift index column: total_psd_drift
+
+====================================================================================
+[C10 & C19] monotonicity on candidate indices
+  cands.append(("summed_4band", g[bands].abs().sum(1).to_numpy(float)))
+  cands.append(("sigma_norm_4band",(g[bands].abs()/sig).sum(1).to_numpy(float)))
+  total_psd_drift    Spearman rho=+0.185 p=0.375 ns | Kendall tau=+0.127 p=0.391 | linR2=0.031 isoR2=0.273
+  summed_4band       Spearman rho=+0.185 p=0.375 ns | Kendall tau=+0.127 p=0.391 | linR2=0.031 isoR2=0.273
+  sigma_norm_4band   Spearman rho=+0.175 p=0.402 ns | Kendall tau=+0.127 p=0.391 | linR2=0.034 isoR2=0.180
+  theta_only         Spearman rho=+0.617 p=0.00102 ** | Kendall tau=+0.440 p=0.00169 | linR2=0.234 isoR2=0.394
+  READ-OFF: use the PAPER index (total_psd_drift) row to judge 'monotonic'. If its Spearman is +ve & p<0.05,
+  the monotonic claim holds on the paper's own index; if n.s., soften to a theta-SPECIFIC (not aggregate) effect.
+
+====================================================================================
+[C18] cross-validated EER prediction (out-of-sample) by feature set
+  feats=total_psd_drift  leave-one-emotion-pair-out MAE=0.0076 RMSE=0.0081 predR2=-0.133
+  feats=total_psd_drift  leave-one-transition-out   MAE=0.0076 RMSE=0.0081 predR2=-0.133
+  feats=theta_only       leave-one-emotion-pair-out MAE=0.0062 RMSE=0.0071 predR2=+0.125
+  feats=theta_only       leave-one-transition-out   MAE=0.0062 RMSE=0.0071 predR2=+0.125
+  feats=4band            leave-one-emotion-pair-out MAE=0.0065 RMSE=0.0074 predR2=+0.031
+  feats=4band            leave-one-transition-out   MAE=0.0065 RMSE=0.0074 predR2=+0.031
+  READ-OFF: 'predictable' needs predR2>0 out-of-sample for at least one sensible feature set; else 'systematically associated'.
+
+DONE -> outputs/work3/17_index_monotonic_cv
+
+================ outputs/work3/logs/21_swap.log ================
+merged 50 conditions
+faithfulness (swap-fixed) r=+0.683
+
+[C12] 4-band regression (my full-window drift) vs ArcFace EER:
+  amplitude  theta beta=+0.795
+  z-scored   theta beta=+0.914
+
+[C8] pipeline theta_csv vs per-matcher EER (swap-fixed):
+  EER_PSD          n=50 Spearman=+0.182 p=0.206
+  EER_Lightweight  n=50 Spearman=+0.275 p=0.0531
+  EER_ArcFace      n=50 Spearman=+0.372 p=0.00787
+DONE
+
+================ outputs/work3/logs/10_csv.log ================
+====================================================================================
+source: outputs/run_06_q1_levelup_biological_embedding_analysis/tables/merged_global_psd_identity_eer.csv | rows: 250
+cols: ['enroll_session', 'test_session', 'enroll_emotion', 'test_emotion', 'transition', 'theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift', 'total_psd_drift', 'variant', 'seed', 'EER', 'AUC']
+band drift columns present: ['theta_power_drift', 'alpha_power_drift', 'beta_power_drift', 'gamma_power_drift']
+
+====================================================================================
+[C9] delta band + broadband/total-drift control
+  base (4-band) seed-collapsed n=50  R2=0.199
+    theta_power_drift  beta=+0.430  p=0.00402
+    alpha_power_drift  beta=-0.257  p=0.0742
+    beta_power_drift   beta=-0.178  p=0.493
+    gamma_power_drift  beta=+0.079  p=0.761
+  delta_power_drift NOT in CSV -> recompute 5-band drift in step 11 (11_band_recompute_from_windows.py).
+  broadband control: theta beta=+0.564 p=0.00514 | total_psd beta=-0.280 p=0.152
+  READ-OFF: if theta stays significant with total_psd_drift in-model, it is not just broadband distance.
+
+====================================================================================
+[C10] normalised identity-drift index
+  index=unnormalised     Spearman rho=+0.057 p=0.695
+  index=sigma-normalised Spearman rho=+0.091 p=0.528
+  READ-OFF: if both indices give the same positive monotone EER relation, the metric choice is not driving the result.
+
+====================================================================================
+[C19] monotonicity of drift->EER
+  Spearman rho=+0.057 p=0.695 | Kendall tau=+0.026 p=0.789
+  linear R2=0.016 | isotonic R2=0.127  (close => monotone well described by a rising line)
+  READ-OFF: positive significant Spearman+Kendall and isotonic~linear R2 justify 'monotonic'.
+
+====================================================================================
+[C18] cross-validated EER prediction from spectral drift
+  leave-one-emotion-pair-out   n=50  MAE=0.0070  RMSE=0.0077  predictive R2=-0.028
+  leave-one-transition-out     n=50  MAE=0.0094  RMSE=0.0118  predictive R2=-1.444
+  READ-OFF: predictive R2>0 (out-of-sample) supports 'predictable'; if <=0, reword to 'systematically associated'.
+
+====================================================================================
+[C8] theta->EER per matcher (CSV variants)
+  CSV has a single variant -> run step 13 (13_matcher_theta_consistency.py) to get PSD/EEGNet/ArcFace EERs.
+
+DONE -> outputs/work3/10_csv_checks
+
+================ outputs/work3/logs/12_subject.log ================
+====================================================================================
+[C20] subjects n=16
+  Spearman rho=-0.436 p=0.0917 | Kendall tau=-0.360 p=0.0526
+  Theil-Sen slope=-14.2 (95% CI -28.2,+0.08913)
+  LOSO Spearman range [-0.744, -0.382] (sign-stable if all same sign)
+  READ-OFF: positive significant Spearman + sign-stable LOSO => theta drift tracks identity EER at subject level.
+DONE -> outputs/work3/12_subject_theta
+
+================ outputs/work3/logs/19_robust.log ================
+channels=62 fs=200 regions=['Central/Motor', 'Frontal', 'Occipital', 'Parietal', 'Temporal']
+
+merged 50 conditions (recomputed full-window vs CSV)
+====================================================================================
+(A) FAITHFULNESS: full-window theta vs CSV theta_power_drift: Pearson r=-0.119 Spearman=+0.023
+
+(B) 4-band standardized regression (n=50, R2=0.125) -- expect theta~+0.43:
+    theta  beta=-0.060 p=0.702
+    alpha  beta=+0.156 p=0.449
+    beta   beta=+0.699 p=0.0358
+    gamma  beta=-0.535 p=0.0862
+(C) single theta [amplitude] vs EER: Spearman=-0.214 p=0.135
+(C) single theta [z-scored ] vs EER: Spearman=-0.284 p=0.0454
+
+====================================================================================
+(D) [C20] per-subject full-window theta vs per-subject EER
+    n=16 Spearman=-0.276 p=0.3 | LOSO [-0.550,-0.189]
+DONE -> outputs/work3/19_robust
+
+================ outputs/work3/logs/14_mitig.log ================
+====================================================================================
+[C15] theta-aware (unsupervised) normalisation vs baseline
+ subject  baseline_EER  theta_norm_EER   delta
+       1        0.2236          0.2266  0.0030
+       2        0.3048          0.3070  0.0021
+       3        0.3154          0.3123 -0.0031
+       4        0.1045          0.1050  0.0006
+       5        0.1694          0.1657 -0.0037
+       6        0.5006          0.5086  0.0080
+       7        0.5411          0.5350 -0.0061
+       8        0.0813          0.0812 -0.0001
+       9        0.1367          0.1365 -0.0002
+      10        0.3056          0.3049 -0.0008
+      11        0.2943          0.2932 -0.0011
+      12        0.0064          0.0069  0.0005
+      13        0.2998          0.3008  0.0011
+      14        0.1007          0.0998 -0.0009
+      15        0.1827          0.1881  0.0054
+      16        0.1676          0.1682  0.0006
+
+  mean baseline=0.2334  theta-norm=0.2337  mean Δ=+0.0003  Wilcoxon p=0.9
+  reference (paper, supervised re-enrolment): S2 -9.0% p=0.006 ; S3 -10.9% p=2e-4
+  READ-OFF: if theta-norm lowers EER (Δ<0, p<0.05), the mitigation is connected to the theta mechanism (answers C15).
+  If it does not help, report honestly: theta is a correlate; unsupervised theta-normalisation is insufficient, re-enrolment remains the practical fix.
+DONE -> outputs/work3/14_theta_mitigation
+
+================ outputs/work3/logs/16_aep.log ================
+AEP channels: ['T7', 'F8', 'Cz', 'P4'] | T7 at index 0
+====================================================================================
+[C14] AEP theta drift -> cross-session EER (n=20 subjects)
+  theta_drift_4ch    Spearman rho=+0.150 p=0.527
+  theta_drift_T7     Spearman rho=+0.287 p=0.22
+  READ-OFF: positive theta (esp. T7) vs EER supports the temporal-theta account beyond SEED-V.
+  If null, keep 'partial replication of degradation'.
+DONE -> outputs/work3/16_aep_theta
+
+================ outputs/work3/logs/15_reve.log ================
+Found 0 positions out of 1 channels
+Found 0 positions out of 1 channels
+  within   frozen=0.2514  linear-probe=0.0001
+  S1->S2   frozen=0.3130  linear-probe=0.1006
+  S1->S3   frozen=0.3078  linear-probe=0.1085
+  READ-OFF (C7): report both. If the linear probe still degrades across sessions, the fair test confirms
+  frozen foundation features do not solve drift; if it closes the gap, soften the REVE claim accordingly.
+DONE -> outputs/work3/15_reve_probe
+
+================ outputs/work3/logs/18_faithful.log ================
+06 BANDS: {'theta': (4, 8), 'alpha': (8, 13), 'beta': (13, 30), 'gamma': (30, 45)} | REGION_ORDER: ['Frontal', 'Central/Motor', 'Temporal', 'Parietal', 'Occipital', 'Other']
+channels=62 fs=200 | regions found: ['Central/Motor', 'Frontal', 'Occipital', 'Parietal', 'Temporal']
+[C12 evidence] stored window per-ch std avg=0.875 (1.0 => unit z-scored; <1 => amplitude-preserving)
+
+====================================================================================
+[C12] pipeline-faithful theta drift vs ArcFace EER: amplitude vs z-scored
+  amplitude (paper)    n=50  theta std-beta=-0.232  Spearman rho=-0.286 p=0.0444
+  z-scored windows     n=50  theta std-beta=-0.261  Spearman rho=-0.317 p=0.0248
+  SELF-CHECK: 'amplitude (paper)' theta std-beta should be ~ +0.43 (matches CSV Table 3).
+  READ-OFF (C12): if z-scored theta beta is similar, per-window z-scoring would not change the story;
+  and since the paper already uses amplitude-preserving power, C12 is a Methods clarification.
+
+====================================================================================
+[C20] per-subject pipeline-faithful theta drift vs per-subject cross-session EER
+  n=16  Spearman rho=-0.238 p=0.374 | Kendall tau=-0.200 p=0.306
+  LOSO Spearman range [-0.504,-0.146]
+  READ-OFF: POSITIVE significant => theta drift tracks identity EER at subject level (supports paper).
+            NEGATIVE/again null => the theta effect is between-condition only, NOT a per-subject identity signal.
+
+====================================================================================
+[C8] pipeline theta_power_drift vs per-matcher EER
+  merged 50 conditions with pipeline theta_power_drift
+    EER_PSD          n=50  Spearman(theta_pipeline, EER)=+0.085 p=0.558
+    EER_Lightweight  n=50  Spearman(theta_pipeline, EER)=+0.139 p=0.336
+    EER_ArcFace      n=50  Spearman(theta_pipeline, EER)=+0.372 p=0.00787
+  READ-OFF: consistent positive across PSD/Lightweight/ArcFace => pipeline theta generalises across matchers.
+
+DONE -> outputs/work3/18_faithful_theta

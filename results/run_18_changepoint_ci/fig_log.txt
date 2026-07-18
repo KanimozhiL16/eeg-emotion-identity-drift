@@ -1,0 +1,2 @@
+SAVED Fig03b_change_point.png -> outputs/run_18_changepoint_ci/Fig03b_change_point.png
+Download that PNG and replace figures/Fig03b_change_point.png locally + in Overleaf.

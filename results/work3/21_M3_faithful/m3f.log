@@ -1,0 +1,27 @@
+nohup: ignoring input
+06 BANDS: {'theta': (4, 8), 'alpha': (8, 13), 'beta': (13, 30), 'gamma': (30, 45)} | REGION_ORDER: ['Frontal', 'Central/Motor', 'Temporal', 'Parietal', 'Occipital', 'Other']
+session files: ['SEEDV_Q1_SAFE_SESSION1_16sub.npz', 'SEEDV_Q1_SAFE_SESSION2_16sub.npz', 'SEEDV_Q1_SAFE_SESSION3_16sub.npz']
+channels=62 fs=200 regions=['Frontal', 'Central/Motor', 'Temporal', 'Parietal', 'Occipital'] emotions=[0, 1, 2, 3, 4]
+ICLabel available: False | frontal proxies: ['FP1', 'FPZ', 'FP2', 'AF3', 'AF4']
+[session 1] ICA removed 12 comps: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(5)), ('eog', 'FP1', np.int64(10)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(5)), ('eog', 'FPZ', np.int64(8)), ('eog', 'FPZ', np.int64(10)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(5)), ('eog', 'FP2', np.int64(8)), ('eog', 'FP2', np.int64(4)), ('eog', 'FP2', np.int64(10)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(5)), ('eog', 'AF3', np.int64(10)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(5)), ('eog', 'AF4', np.int64(8)), ('muscle', '', 13), ('muscle', '', 20), ('muscle', '', 28), ('muscle', '', 33), ('muscle', '', 38), ('muscle', '', 43), ('muscle', '', 44)]
+[session 2] ICA removed 11 comps: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(3)), ('eog', 'FP1', np.int64(8)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(3)), ('eog', 'FPZ', np.int64(8)), ('eog', 'FPZ', np.int64(38)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(3)), ('eog', 'FP2', np.int64(2)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(3)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(3)), ('eog', 'AF4', np.int64(2)), ('muscle', '', 24), ('muscle', '', 26), ('muscle', '', 27), ('muscle', '', 30), ('muscle', '', 34), ('muscle', '', 38), ('muscle', '', 40)]
+[session 3] ICA removed 7 comps: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(7)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(7)), ('eog', 'FPZ', np.int64(16)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(7)), ('eog', 'FP2', np.int64(2)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(7)), ('eog', 'AF3', np.int64(2)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(7)), ('eog', 'AF4', np.int64(2)), ('muscle', '', 19), ('muscle', '', 31), ('muscle', '', 32)]
+[session 1] theta computed (5 emotions)
+[session 2] theta computed (5 emotions)
+[session 3] theta computed (5 emotions)
+[merge] base rows = 50  (expect 50: 2 sessions x 25 emotion pairs)
+
+==================================================================================
+M3 (FAITHFUL) THETA ARTIFACT-ROBUSTNESS  -- pipeline-06 theta_power_drift -> ArcFace EER
+==================================================================================
+  stored  std-beta=+0.362  rho=+0.372 p=0.0079  n=50  ICs_removed=0
+  filter  std-beta=+0.362  rho=+0.372 p=0.0079  n=50  ICs_removed=0  (+0% vs stored)
+  ica     std-beta=+0.404  rho=+0.337 p=0.0166  n=50  ICs_removed=30  (+12% vs stored)
+----------------------------------------------------------------------------------
+  FAITHFULNESS: corr(my stored theta_drift, paper theta_power_drift) = 1.000  (want ~0.99)
+  SELF-CHECK  : stored std-beta = +0.362  (must be POSITIVE, ~ the paper's theta effect)
+  READ-OFF    : if 'ica' std-beta stays POSITIVE and close to stored => theta SURVIVES
+                ocular+muscle removal => NEURAL, not artifact.
+
+[out] outputs/work3/21_M3_faithful/  ->  m3f_beta_summary.csv, m3f_theta_conditions.csv, figures/*
+DONE.

@@ -1,0 +1,41 @@
+nohup: ignoring input
+06 BANDS: {'theta': (4, 8), 'alpha': (8, 13), 'beta': (13, 30), 'gamma': (30, 45)}
+channels=62 fs=200 regions=['Central/Motor', 'Frontal', 'Occipital', 'Parietal', 'Temporal'] emotions=[0, 1, 2, 3, 4]
+ICLabel available: True | ASR backend: asrpy
+
+[session 1] cleaning 6000 sampled windows ...
+   ICA removed 30 components: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(3)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(3)), ('eog', 'FPZ', np.int64(17)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(3)), ('eog', 'FP2', np.int64(2)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(3)), ('eog', 'AF3', np.int64(2)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(3)), ('eog', 'AF4', np.int64(2)), ('muscle', '', 14), ('muscle', '', 15), ('muscle', '', 17), ('muscle', '', 18), ('muscle', '', 19), ('muscle', '', 20), ('muscle', '', 21), ('muscle', '', 22), ('muscle', '', 23), ('muscle', '', 24), ('muscle', '', 25), ('muscle', '', 26), ('muscle', '', 27), ('muscle', '', 28), ('muscle', '', 30), ('muscle', '', 31), ('muscle', '', 33), ('muscle', '', 34), ('muscle', '', 35), ('muscle', '', 36), ('muscle', '', 37), ('muscle', '', 42), ('muscle', '', 43), ('muscle', '', 45), ('muscle', '', 46), ('muscle', '', 48), ('muscle', '', 53)]
+   [asr] skipped (only 0-dimensional arrays can be converted to Python scalars)
+
+[session 2] cleaning 6000 sampled windows ...
+   ICA removed 32 components: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(3)), ('eog', 'FP1', np.int64(9)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(3)), ('eog', 'FPZ', np.int64(9)), ('eog', 'FPZ', np.int64(40)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(3)), ('eog', 'FP2', np.int64(2)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(3)), ('eog', 'AF3', np.int64(9)), ('eog', 'AF3', np.int64(2)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(3)), ('eog', 'AF4', np.int64(2)), ('muscle', '', 9), ('muscle', '', 11), ('muscle', '', 14), ('muscle', '', 16), ('muscle', '', 17), ('muscle', '', 18), ('muscle', '', 20), ('muscle', '', 21), ('muscle', '', 22), ('muscle', '', 23), ('muscle', '', 24), ('muscle', '', 25), ('muscle', '', 26), ('muscle', '', 27), ('muscle', '', 28), ('muscle', '', 29), ('muscle', '', 30), ('muscle', '', 31), ('muscle', '', 32), ('muscle', '', 33), ('muscle', '', 34), ('muscle', '', 36), ('muscle', '', 37), ('muscle', '', 39), ('muscle', '', 40), ('muscle', '', 41), ('muscle', '', 43), ('muscle', '', 46), ('muscle', '', 53)]
+   [asr] skipped (only 0-dimensional arrays can be converted to Python scalars)
+
+[session 3] cleaning 6000 sampled windows ...
+   ICA removed 33 components: [('eog', 'FP1', np.int64(0)), ('eog', 'FP1', np.int64(5)), ('eog', 'FP1', np.int64(8)), ('eog', 'FPZ', np.int64(0)), ('eog', 'FPZ', np.int64(5)), ('eog', 'FPZ', np.int64(8)), ('eog', 'FPZ', np.int64(6)), ('eog', 'FP2', np.int64(0)), ('eog', 'FP2', np.int64(5)), ('eog', 'FP2', np.int64(6)), ('eog', 'AF3', np.int64(0)), ('eog', 'AF3', np.int64(5)), ('eog', 'AF3', np.int64(8)), ('eog', 'AF4', np.int64(0)), ('eog', 'AF4', np.int64(5)), ('eog', 'AF4', np.int64(6)), ('muscle', '', 6), ('muscle', '', 8), ('muscle', '', 12), ('muscle', '', 13), ('muscle', '', 15), ('muscle', '', 17), ('muscle', '', 19), ('muscle', '', 20), ('muscle', '', 21), ('muscle', '', 22), ('muscle', '', 23), ('muscle', '', 24), ('muscle', '', 25), ('muscle', '', 26), ('muscle', '', 27), ('muscle', '', 28), ('muscle', '', 30), ('muscle', '', 31), ('muscle', '', 33), ('muscle', '', 35), ('muscle', '', 36), ('muscle', '', 37), ('muscle', '', 38), ('muscle', '', 39), ('muscle', '', 40), ('muscle', '', 41), ('muscle', '', 42), ('muscle', '', 44), ('muscle', '', 46), ('muscle', '', 49), ('muscle', '', 53)]
+   [asr] skipped (only 0-dimensional arrays can be converted to Python scalars)
+
+====================================================================================
+M3 THETA ARTIFACT-ROBUSTNESS  (std-beta of theta-drift -> EER at each cleaning stage)
+====================================================================================
+  stored     std-beta=-0.133  rho=-0.174 p=0.228  n=50  ICs_removed=0
+  filter     std-beta=-0.133  rho=-0.174 p=0.228  n=50  ICs_removed=0  (+0% vs stored)
+  ica        std-beta=-0.139  rho=-0.251 p=0.0787  n=50  ICs_removed=95  (-5% vs stored)
+  ica_asr    std-beta=-0.139  rho=-0.251 p=0.0787  n=50  ICs_removed=95  (-5% vs stored)
+------------------------------------------------------------------------------------
+  SELF-CHECK: 'stored' std-beta should reproduce ~ +0.43 (manuscript). Observed -0.133.
+  READ-OFF (M3): if 'ica' (and 'ica_asr') std-beta stays POSITIVE and close to 'stored',
+  the theta-drift correlate SURVIVES ocular+muscle removal => it is a NEURAL effect, not an artifact.
+Traceback (most recent call last):
+  File "/lp-dev/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/scripts/work3/20_M3_theta_artifact_robustness.py", line 311, in <module>
+    g = d[[col, "EER"]].dropna()
+        ~^^^^^^^^^^^^^^
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/pandas/core/frame.py", line 4384, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/pandas/core/indexes/base.py", line 6302, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nvidia/24PHD1237/P4_SEEDV_COGNITIVE_BIOMETRIC/p4_seedv_env/lib/python3.13/site-packages/pandas/core/indexes/base.py", line 6355, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['EER'] not in index"

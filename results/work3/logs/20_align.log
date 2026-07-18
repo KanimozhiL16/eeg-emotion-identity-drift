@@ -1,0 +1,4 @@
+emotion int ids: [0, 1, 2, 3, 4] | CSV emotion names: ['Disgust', 'Fear', 'Happy', 'Neutral', 'Sad']
+BEST faithfulness r=+0.683  mapping={0: 'Disgust', 1: 'Fear', 2: 'Sad', 3: 'Neutral', 4: 'Happy'}  swap_enroll_test=True
+READ-OFF: r>0.85 => it WAS an emotion-label mapping issue (mapping shown is correct); theta is faithfully
+reproducible and I redo C8/C12/C20 with this mapping. r still low => theta does NOT reproduce on full data.

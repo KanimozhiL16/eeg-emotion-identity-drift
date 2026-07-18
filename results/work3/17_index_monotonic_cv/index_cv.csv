@@ -1,0 +1,11 @@
+index,spearman_rho,spearman_p,kendall_tau,kendall_p,lin_R2,iso_R2,MAE,RMSE,pred_R2
+total_psd_drift,0.185,0.37497456077893954,0.127,0.3913909170309529,0.031,0.273,,,
+summed_4band,0.185,0.37497456077893954,0.127,0.3913909170309529,0.031,0.273,,,
+sigma_norm_4band,0.175,0.40171841124929525,0.127,0.3913909170309529,0.034,0.18,,,
+theta_only,0.617,0.001020744077880278,0.44,0.0016947235531532155,0.234,0.394,,,
+CV[total_psd_drift|leave-one-emotion-pair-out],,,,,,,0.0076,0.0081,-0.133
+CV[total_psd_drift|leave-one-transition-out],,,,,,,0.0076,0.0081,-0.133
+CV[theta_only|leave-one-emotion-pair-out],,,,,,,0.0062,0.0071,0.125
+CV[theta_only|leave-one-transition-out],,,,,,,0.0062,0.0071,0.125
+CV[4band|leave-one-emotion-pair-out],,,,,,,0.0065,0.0074,0.031
+CV[4band|leave-one-transition-out],,,,,,,0.0065,0.0074,0.031

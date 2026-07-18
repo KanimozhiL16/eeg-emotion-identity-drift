@@ -1,0 +1,2 @@
+same_emotion_mean_eer,same_emotion_std_eer,cross_emotion_mean_eer,cross_emotion_std_eer,same_emotion_mean_auc,cross_emotion_mean_auc,eer_degradation_cross_minus_same
+0.07436071605295141,0.006216474511542293,0.07400080113466219,0.006394946609846172,0.9751781257250917,0.9751921516942916,-0.0003599149182892253

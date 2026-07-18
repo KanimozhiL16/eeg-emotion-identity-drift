@@ -1,0 +1,13 @@
+======================================================================
+STEP 5b  alpha-controlled theta attribution | n = 250
+======================================================================
+
+Partial r(theta, EER | alpha) = 0.351, p = 1.17e-08
+(raw  r(theta, EER)          = 0.317)
+
+Nested model: R^2(alpha)=0.022 -> R^2(alpha+theta)=0.142
+Theta adds dR^2=0.120; F(1,247)=34.69, p=1.26e-08
+
+VERDICT: theta explains EER variance BEYOND alpha (partial r & nested F both
+significant) -> the drift->error effect is theta-specific, not an alpha artefact.
+======================================================================
