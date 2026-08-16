@@ -1,0 +1,40 @@
+# environment.yml — reproducibility environment for
+# "Emotion-Associated and Cross-Session Identity Drift in EEG Biometrics"
+# (SEED-V, IEEE TAFFC submission)
+#
+# Create with:   conda env create -f environment.yml
+# Activate with: conda activate p4_seedv
+#
+# NOTE: version floors below are conservative and match the libraries used on the
+# analysis box (NVIDIA Brev A100, Ubuntu, conda env `p4_seedv_env`). Before tagging
+# v1.0, overwrite the pins in this file with the exact resolved versions by running
+# on the box:            conda env export --no-builds > environment.lock.yml
+# and commit BOTH files (environment.yml for humans, environment.lock.yml for exact
+# reproduction). PyTorch is required only for the deep-encoder / capacity-ablation and
+# EEGNet baselines; the PSD+cosine, spectral-regression, mixed-model and mitigation
+# analyses run without a GPU.
+
+name: p4_seedv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy>=1.24
+  - scipy>=1.10
+  - pandas>=1.5
+  - scikit-learn>=1.2
+  - statsmodels>=0.14          # participant-aware MixedLM, OLS, FDR
+  - matplotlib>=3.7
+  - mne>=1.5                   # preprocessing, ICA (extended-Infomax)
+  - tqdm>=4.65
+  - pyyaml>=6.0
+  - pip:
+      - mne-icalabel>=0.6      # ICLabel component classification (S-M3 control)
+      # ---- deep-encoder / EEGNet / REVE frozen-embedding baselines only ----
+      # Install the CUDA build matching the box; CPU build is sufficient to
+      # reproduce every non-deep analysis. Pin the exact version on the box.
+      - torch>=2.1
+      # REVE foundation encoder: install from its official release/weights as
+      # documented in REPRODUCE.md (not redistributed in this repository).
