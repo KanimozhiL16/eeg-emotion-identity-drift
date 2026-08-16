@@ -19,7 +19,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.10
+  - python=3.13          # analysis box runs 3.13.12; exact pins in requirements.txt
   - pip
   - numpy>=1.24
   - scipy>=1.10
