@@ -1,4 +1,13 @@
-#!/usr/bin/env python3
+# ============================================================================
+# DEPRECATED — DO NOT USE.
+# This script uses a random-window split (can place 50%-overlapping neighbours
+# in both enrolment and test) and reports the older +0.047 / +0.077 effects.
+# It is SUPERSEDED by the leakage-free, whole-trial-disjoint analysis in:
+#     scripts/r4rev_reanalysis.py   (2x2, theta-transition, manip check)
+#     scripts/r4rev_finalize.py     (participant-aware mixed model + FDR)
+# The canonical trial-disjoint results are +0.031 (emotion) / +0.062 (session).
+# Retained only for provenance. See docs/REPRODUCE.md.
+# ============================================================================#!/usr/bin/env python3
 """
 32_state_vs_time.py  --  REVIEWER FIX M2 (state vs time decomposition).
 
