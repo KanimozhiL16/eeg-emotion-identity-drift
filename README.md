@@ -2,7 +2,7 @@
 <div align="center">
 
 # Emotion-Associated and Cross-Session Identity Drift in EEG Biometrics
-### Measurement, a Theta-Band Correlate, and Lightweight Mitigation
+### Measurement, an Exploratory Spectral Correlate, and Lightweight Mitigation
 
 Reproducibility and evidence repository for the manuscript submitted to
 **IEEE Transactions on Affective Computing (TAC)**.
@@ -16,27 +16,30 @@ Reproducibility and evidence repository for the manuscript submitted to
 ## Overview
 
 This repository contains the complete analysis code, per-experiment result tables, logs, and
-figures behind the paper. The study measures how **affective state (elicited-emotion condition)**
-and **elapsed time (recording session)** degrade the stability of EEG-based identity representations,
-localises the degradation to a **theta-band spectral correlate**, tests whether a foundation-scale
-EEG encoder removes it, and evaluates a **lightweight single-sample re-enrolment** mitigation — all
-under a strict, leakage-controlled *enrol-then-verify* protocol.
+figures behind the paper. The study measures how the **elicited-emotion condition** and
+**recording-session mismatch** degrade the stability of EEG-based identity representations,
+attaches an **exploratory theta-band spectral correlate** (condition-level, not
+participant-general), tests whether a foundation-scale EEG encoder removes the degradation, and
+evaluates a **lightweight labelled target-session re-enrolment** mitigation — all under a strict,
+leakage-controlled *enrol-then-verify* protocol.
 
-Every numerical claim in the manuscript is traceable to a result file in [`results/`](results/); the
-mapping is given in [`docs/PAPER_TABLE_MAP.md`](docs/PAPER_TABLE_MAP.md).
+Every numerical claim in the manuscript is traceable to a result file in [`results/`](results/);
+the mapping is given in [`docs/PAPER_TABLE_MAP.md`](docs/PAPER_TABLE_MAP.md) and
+[`docs/REPRODUCE.md`](docs/REPRODUCE.md).
 
 ## Key findings (all reproducible from this repo)
 
 | Finding | Result |
 |---|---|
-| Per-participant EER rises across sessions | 0.131 (within) → 0.169 (S1→S2) → 0.246 (S1→S3) |
+| Per-participant EER rises across sessions | 0.131 (within) → 0.169 (S1→S2) → 0.246 (S1→S3); Friedman p=0.003 |
 | Global pooled EER (same ordering) | 0.138 / 0.182 / 0.251 |
-| Emotion-condition change vs elapsed-time change | each independently ↑ EER (ΔEER +0.047 / +0.077; BH-FDR significant) |
-| Foundation model does not close the gap | frozen-cosine degrades; a supervised linear probe recovers most (0.31 → 0.10–0.11) |
-| Spectral correlate | theta-band drift predicts EER (standardised β ≈ +0.43); survives ICA ocular+muscle removal (+0.36 → +0.40) |
-| Manipulation check | 5-way emotion decoding 34.5% vs 20% chance (t(15)=5.96, p=2.6×10⁻⁵) |
-| Lightweight mitigation | single-sample re-enrolment lowers future-session EER by ≈9–11% (p<0.01) |
-| External replications | within-day auditory-EEG (AEP) and separate-day SEED-IV cohorts reproduce the collapse |
+| Leakage-free trial-disjoint 2×2 (session vs emotion) | session ΔEER **+0.062** (β=+0.062, p=5×10⁻⁴); emotion ΔEER **+0.031** — significant in paired/FDR tests but **marginal in the participant-aware mixed model** (p=0.086); cells 0.170/0.201/0.232/0.252 |
+| Emotion effect not explained by film clip | same-emotion clip-change baseline 0.174 vs different-emotion 0.195 (paired W=18, p=0.008) |
+| Foundation model does not close the gap | frozen-cosine REVE degrades (0.251/0.313/0.308); a supervised linear probe recovers most (0.31 → 0.10–0.11), with read-out choice substantially affecting performance |
+| Exploratory spectral correlate | theta-band drift predicts EER (standardised β ≈ +0.43, p=0.004); concentrated in the larger S1→S3 mismatch (not a transition-general law); survives a **session-level** ICA ocular+muscle control (+0.36 → +0.40); **not** robust to participant clustering (CI spans zero) |
+| Manipulation check (label validity) | raw 5-way emotion decoding 34.5% vs 20% chance (t(15)=5.96, p=2.6×10⁻⁵); imbalance-aware **balanced accuracy 0.325**, significant in **12/16** participants (200-fold trial-level permutation) |
+| Lightweight mitigation | labelled **target-session** re-enrolment (fraction f=0.2) lowers **remaining target-session** EER by ≈9–11% (S2 0.216→0.197, −9.0%; S3 0.237→0.211, −10.9%; p<0.01) |
+| External replications | separate-day SEED-IV (PSD+cosine 0.233→0.324→0.362, n=15) and same-day auditory-EEG/AEP (0.19→0.32, n=20) reproduce the within-to-cross collapse |
 
 ## Repository structure
 
@@ -45,17 +48,17 @@ mapping is given in [`docs/PAPER_TABLE_MAP.md`](docs/PAPER_TABLE_MAP.md).
 ├── README.md                     # this file
 ├── LICENSE                       # MIT (code); datasets are third-party — see data/README.md
 ├── CITATION.cff                  # how to cite this work
-├── requirements.txt              # exact pinned Python environment
+├── requirements.txt              # exact pinned Python environment (from `pip freeze` on the box)
 ├── environment.yml               # conda environment
-├── scripts/                      # all analysis code (numbered by pipeline stage)
+├── scripts/                      # all analysis code
 ├── results/                      # per-experiment result tables, logs, and metrics (the evidence)
-│   └── manuscript_tables/        # T1–T7 CSVs that map 1:1 to the paper's tables
+│   └── manuscript_tables/        # CSVs that map 1:1 to the paper's tables
 ├── figures/                      # main-text and supplementary figures
-├── supplementary/                # supplementary material (S-M2 manip-check, S-M3 ICA, S-M11 2×2)
+├── supplementary/                # supplementary material (S2 manip-check, S-M3 ICA, S-M11 2×2, S-C, S-TT, S-CLIP)
 ├── data/
 │   └── README.md                 # how to obtain SEED-V, SEED-IV, AEP (not redistributed here)
 └── docs/
-    ├── REPRODUCE.md              # step-by-step reproduction
+    ├── REPRODUCE.md              # step-by-step reproduction + paper→code→output map
     └── PAPER_TABLE_MAP.md        # paper table/figure → script → result file
 ```
 
@@ -70,41 +73,66 @@ This work uses **public, third-party EEG corpora**; raw data are **not redistrib
 | SEED-IV (SJTU, *EmotionMeter*) | separate-day replication | 15 | 3 |
 | Auditory-Evoked-Potential (AEP) | same-day replication | 20 | 1 |
 
-Preprocessing (SEED-V/IV): 62 scalp channels, band-pass 0.5–45 Hz, 50 Hz notch, common-average
-reference, resample 1000→200 Hz, 2 s windows with 1 s hop, per-window z-score → arrays of shape
-`(N, 62, 400)`.
+**Preprocessing (SEED-V/IV):** 62 scalp channels, 50 Hz notch then band-pass 0.5–45 Hz,
+common-average reference, resample 1000→200 Hz, 2 s windows with 1 s hop (50% overlap) → arrays of
+shape `(N, 62, 400)`.
+
+**Normalisation (important — reviewer-relevant):** the stored windows are
+**amplitude-preserving** — mean-centred but **not** variance-normalised (mean per-window,
+per-channel SD ≈ 0.88; CV ≈ 0.06). Variance normalisation is applied **only** downstream, at the
+**feature** level: the 434-D matcher descriptor is standardised using **enrolment-set** statistics
+— *not* by per-window z-scoring — so the per-window standard-deviation feature survives as a
+genuine (non-constant) descriptor feature. The interpretive/spectral branch uses raw (unnormalised)
+band powers.
 
 ## Reproducing the results
 
-Full instructions are in [`docs/REPRODUCE.md`](docs/REPRODUCE.md). In brief:
+Full instructions and the paper→code→output map are in [`docs/REPRODUCE.md`](docs/REPRODUCE.md).
+In brief:
 
 ```bash
 # 1. environment
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+conda env create -f environment.yml && conda activate p4_seedv
+#    (or: python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt)
 
 # 2. obtain + preprocess the datasets (see data/README.md) into data/processed/sessionwise/
 
-# 3. run the pipeline (each stage writes to results/)
-python scripts/step3_baselines.py                 # matcher baselines (Table II/III)
-python scripts/reve_benchmark.py                  # frozen foundation encoder + linear probe
-python scripts/32_state_vs_time.py                # emotion vs time decomposition (Table, 2×2)
-python scripts/40_m11_wilcoxon_fdr.py             # W + BH-FDR for the 2×2 contrasts
-python scripts/21_M3_theta_robustness_faithful.py # theta correlate + ICA artifact robustness
-python scripts/manip_fig_only.py                  # neural label-validity manipulation check
+# 3. baselines + session drift
+python scripts/step3_baselines.py                     # matcher baselines (cross-session table)
+
+# 4. canonical leakage-free, whole-trial-disjoint reanalyses
+python scripts/r4rev_reanalysis.py                    # 2×2 (R2), theta-transition (R3), manip check (R4)
+python scripts/r4rev_finalize.py                      # participant-aware MixedLM + FDR + theta transition table
+python scripts/r4rev_R1_capacity.py                   # leakage-free capacity ablation (Table S-C)
+python scripts/r4_clip_control.py                     # clip-controlled affect (Table S-CLIP)
+
+# 5. spectral correlate + ICA robustness
+python scripts/06_q1_levelup_biological_embedding_analysis.py
+python scripts/align_repo_spectral_tables.py          # seed-collapsed OLS → paper-aligned band table
+python scripts/21_M3_theta_robustness_faithful.py     # theta correlate + session-level ICA control
+
+# 6. mitigation + external replication
+python scripts/10_aep_cross_dataset_validation.py     # AEP same-day replication
 ```
 
-A one-shot integrity audit that reconciles every headline number against the result files:
+> **Deprecated:** `scripts/32_state_vs_time.py` (random-window split; older +0.047/+0.077 effects)
+> is superseded by `r4rev_reanalysis.py` + `r4rev_finalize.py` and should not be used.
+
+A one-shot integrity audit reconciles headline numbers against the result files:
 
 ```bash
 python scripts/audit_project.py            # prints PASS/FLAG per manuscript value
 ```
 
+> Note: the audit is being upgraded to check named CSV **result** fields directly (rather than
+> string-matching README/source), so a value cannot pass unless it appears in a genuine result file.
+
 ## Environment
 
-Analyses were run with **Python 3.13.12**, NumPy 2.5.1, SciPy 1.18.0, scikit-learn 1.9.0,
-PyTorch 2.11.0 (CUDA 13.0), and MNE-Python 1.12.1 on an NVIDIA A100. The exact pinned set is in
-[`requirements.txt`](requirements.txt).
+Analyses were run on an NVIDIA A100 (conda env `p4_seedv`). The **authoritative** pinned versions
+live in [`requirements.txt`](requirements.txt) / [`environment.yml`](environment.yml); regenerate
+them on the analysis machine with `pip freeze` / `conda env export --no-builds` so the README, the
+lockfiles, and the actual runtime always agree.
 
 ## Citation
 
@@ -113,7 +141,7 @@ If you use this code or the analysis, please cite the paper (see [`CITATION.cff`
 ```bibtex
 @article{kanimozhi_eeg_drift_2026,
   title   = {Emotion-Associated and Cross-Session Identity Drift in EEG Biometrics:
-             Measurement, a Theta-Band Correlate, and Lightweight Mitigation},
+             Measurement, an Exploratory Spectral Correlate, and Lightweight Mitigation},
   author  = {Kanimozhi, L. and Shridevi, S.},
   journal = {IEEE Transactions on Affective Computing},
   year    = {2026},
