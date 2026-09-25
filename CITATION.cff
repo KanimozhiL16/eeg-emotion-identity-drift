@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite the associated paper."
-title: "Emotion-Associated and Cross-Session Identity Drift in EEG Biometrics: Measurement, a Theta-Band Correlate, and Lightweight Mitigation"
+title: "Leakage-Controlled Evaluation of Session- and Elicitation-Condition-Related Identity Drift in EEG Biometrics: A Two-Dataset Dissociation with Clip-Level Control"
 authors:
   - family-names: "L."
     given-names: "Kanimozhi"
@@ -12,12 +12,12 @@ authors:
 year: 2026
 preferred-citation:
   type: article
-  title: "Emotion-Associated and Cross-Session Identity Drift in EEG Biometrics: Measurement, a Theta-Band Correlate, and Lightweight Mitigation"
+  title: "Leakage-Controlled Evaluation of Session- and Elicitation-Condition-Related Identity Drift in EEG Biometrics: A Two-Dataset Dissociation with Clip-Level Control"
   authors:
     - family-names: "L."
       given-names: "Kanimozhi"
     - family-names: "Shridevi"
       given-names: "S."
-  journal: "IEEE Transactions on Affective Computing"
+  journal: "IEEE Access"
   year: 2026
-  notes: "Under review"
+  notes: "SUBMITTED"
